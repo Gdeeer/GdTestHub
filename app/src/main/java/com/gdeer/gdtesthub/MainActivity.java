@@ -6,7 +6,9 @@ import com.gdeer.gdtesthub.anr.AnrActivity;
 import com.gdeer.gdtesthub.dayDream.MyDaydreamService;
 import com.gdeer.gdtesthub.db.DbActivity;
 import com.gdeer.gdtesthub.finish.FinishActivity;
+import com.gdeer.gdtesthub.handler.HandlerActivity;
 import com.gdeer.gdtesthub.location.LocationActivity;
+import com.gdeer.gdtesthub.retrofit.RetrofitActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -59,6 +61,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void startDB(View view) {
         Intent intent = new Intent(this, DbActivity.class);
+        startActivity(intent);
+    }
+
+    public void startRetrofit(View view) {
+        Intent intent = new Intent(this, RetrofitActivity.class);
+        startActivity(intent);
+    }
+
+    public void startHandler(View view) {
+        Intent intent = new Intent(this, HandlerActivity.class);
         startActivity(intent);
     }
 }
