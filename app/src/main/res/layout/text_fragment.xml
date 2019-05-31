@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/text"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#008577"
+    tools:context="textView.ui.text.TextFragment">
+
+    <TextView
+        android:id="@+id/tv_normal"
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
+        android:text="TextFragment"
+        android:textColor="#ffffff"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/editText"
+        app:layout_constraintRight_toLeftOf="@id/tv_ellipsize"/>
+
+    <TextView
+        android:id="@+id/tv_ellipsize"
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
+        android:text="TextFragment"
+        android:textColor="#ffffff"
+        android:maxLines="2"
+        android:ellipsize="end"
+        app:layout_constraintLeft_toRightOf="@id/tv_normal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/editText"
+        app:layout_constraintRight_toLeftOf="@id/tv_special"/>
+
+    <com.gdeer.gdtesthub.textView.EllipsizeTextView
+        android:id="@+id/tv_special"
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
+        android:text="TextFragment"
+        android:textColor="#ffffff"
+        android:maxLines="2"
+        android:ellipsize="end"
+        app:layout_constraintEnd_toEndOf="@id/tv_special_to_normal"
+        app:layout_constraintStart_toEndOf="@+id/tv_ellipsize"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_special_to_normal"
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
+        android:text="TextFragment"
+        android:textColor="#ffffff"
+        app:layout_constraintLeft_toRightOf="@id/tv_special"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/editText"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="123456789"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:textColor="#ffffff"
+        app:layout_constraintTop_toBottomOf="@+id/tv_special"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

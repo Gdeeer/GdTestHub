@@ -9,6 +9,7 @@ import com.gdeer.gdtesthub.finish.FinishActivity;
 import com.gdeer.gdtesthub.handler.HandlerActivity;
 import com.gdeer.gdtesthub.location.LocationActivity;
 import com.gdeer.gdtesthub.retrofit.RetrofitActivity;
+import com.gdeer.gdtesthub.textView.TextActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -71,6 +72,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void startHandler(View view) {
         Intent intent = new Intent(this, HandlerActivity.class);
+        startActivity(intent);
+    }
+
+    public void startText(View view) {
+        Intent intent = new Intent(this, TextActivity.class);
         startActivity(intent);
     }
 }
