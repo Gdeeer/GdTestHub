@@ -196,6 +196,10 @@ public class AnrActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        unregisterReceiver(registerReceiver);
+        try {
+            unregisterReceiver(registerReceiver);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

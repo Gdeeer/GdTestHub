@@ -9,59 +9,8 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <Button
-        android:onClick="finishTestOnClick"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="finishTest"/>
-
-    <Button
-        android:onClick="ANRTestOnClick"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="ANRTest"/>
-
-    <Button
-        android:onClick="startDayDreamOnClick"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="startDayDream"/>
-
-    <Button
-        android:onClick="startLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="startLocation"/>
-
-    <Button
-        android:onClick="startDB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="startDB"/>
-
-    <Button
-        android:onClick="startRetrofit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="startRetrofit"/>
-
-    <Button
-        android:onClick="startHandler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="startHandler"/>
-
-    <Button
-        android:onClick="startText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="startText"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcv_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>
