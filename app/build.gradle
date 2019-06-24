@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 28
@@ -54,4 +56,5 @@ dependencies {
 
     // Enhanced RecyclerView adapter library
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

@@ -4,20 +4,18 @@ import com.gdeer.gdtesthub.anr.AnrActivity;
 import com.gdeer.gdtesthub.dayDream.MyDaydreamService;
 import com.gdeer.gdtesthub.db.DbActivity;
 import com.gdeer.gdtesthub.finish.FinishActivity;
+import com.gdeer.gdtesthub.launchTime.LaunchActivity;
 import com.gdeer.gdtesthub.location.LocationActivity;
 import com.gdeer.gdtesthub.retrofit.RetrofitActivity;
 import com.gdeer.gdtesthub.textView.TextActivity;
 import com.gdeer.gdtesthub.viewModel.VmActivity;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -55,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startIntent(MainItemBean bean) {
+        Log.d("zhangjl", "startIntent " + System.currentTimeMillis());
         Class clazz = bean.getClazz();
         Intent intent = new Intent(this, clazz);
         try {
@@ -66,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initDataList() {
         MainItemBean[] list = new MainItemBean[]{
+            new MainItemBean("launchTest", LaunchActivity.class),
             new MainItemBean("finishTest", FinishActivity.class),
             new MainItemBean("ANRTest", AnrActivity.class),
             new MainItemBean("startDayDream", MyDaydreamService.class),
