@@ -7,6 +7,7 @@ import com.gdeer.gdtesthub.finish.FinishActivity;
 import com.gdeer.gdtesthub.location.LocationActivity;
 import com.gdeer.gdtesthub.retrofit.RetrofitActivity;
 import com.gdeer.gdtesthub.textView.TextActivity;
+import com.gdeer.gdtesthub.viewModel.VmActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             new MainItemBean("startDB", DbActivity.class),
             new MainItemBean("startRetrofit", RetrofitActivity.class),
             new MainItemBean("startText", TextActivity.class),
+            new MainItemBean("startVM", VmActivity.class),
         };
         mDataList.addAll(Arrays.asList(list));
     }
