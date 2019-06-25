@@ -4,9 +4,10 @@ import com.gdeer.gdtesthub.anr.AnrActivity;
 import com.gdeer.gdtesthub.dayDream.MyDaydreamService;
 import com.gdeer.gdtesthub.db.DbActivity;
 import com.gdeer.gdtesthub.finish.FinishActivity;
-import com.gdeer.gdtesthub.launchTime.LaunchActivity;
+import com.gdeer.gdtesthub.launchTime.LaunchTimeActivity;
 import com.gdeer.gdtesthub.location.LocationActivity;
 import com.gdeer.gdtesthub.retrofit.RetrofitActivity;
+import com.gdeer.gdtesthub.simpleList.MyLauncherActivity;
 import com.gdeer.gdtesthub.textView.TextActivity;
 import com.gdeer.gdtesthub.viewModel.VmActivity;
 
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initDataList() {
         MainItemBean[] list = new MainItemBean[]{
-            new MainItemBean("launchTest", LaunchActivity.class),
+            new MainItemBean("launchTimeTest", LaunchTimeActivity.class),
             new MainItemBean("finishTest", FinishActivity.class),
             new MainItemBean("ANRTest", AnrActivity.class),
             new MainItemBean("startDayDream", MyDaydreamService.class),
@@ -74,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
             new MainItemBean("startRetrofit", RetrofitActivity.class),
             new MainItemBean("startText", TextActivity.class),
             new MainItemBean("startVM", VmActivity.class),
+            new MainItemBean("mainLauncher", MyLauncherActivity.class),
         };
         mDataList.addAll(Arrays.asList(list));
     }

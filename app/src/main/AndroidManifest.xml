@@ -14,8 +14,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".simpleList.MyListActivity">
+        </activity>
+        <activity android:name=".simpleList.MyLauncherActivity">
+        </activity>
         <activity
-            android:name=".launchTime.LaunchActivity"
+            android:name=".launchTime.LaunchTimeActivity"
             android:exported="true">
         </activity>
         <activity android:name=".viewModel.VmActivity">
