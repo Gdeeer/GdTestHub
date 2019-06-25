@@ -6,14 +6,14 @@ import android.util.Log
 import android.widget.TextView
 import com.gdeer.gdtesthub.R
 
-class LaunchActivity : AppCompatActivity() {
+class LaunchTimeActivity : AppCompatActivity() {
 
     private lateinit var mTv: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d("zhangjl", "onCreate " + System.currentTimeMillis())
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_launch)
+        setContentView(R.layout.activity_launch_time)
 
         mTv = findViewById(R.id.textView)
         mTv.setOnClickListener {
