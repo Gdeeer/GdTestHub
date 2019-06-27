@@ -9,6 +9,7 @@ import com.gdeer.gdtesthub.location.LocationActivity;
 import com.gdeer.gdtesthub.retrofit.RetrofitActivity;
 import com.gdeer.gdtesthub.simpleList.MyLauncherActivity;
 import com.gdeer.gdtesthub.textView.TextActivity;
+import com.gdeer.gdtesthub.viewFliper.ViewFlipperActivity;
 import com.gdeer.gdtesthub.viewModel.VmActivity;
 
 import android.content.Intent;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initDataList() {
         MainItemBean[] list = new MainItemBean[]{
+            new MainItemBean("ViewFlipper", ViewFlipperActivity.class),
             new MainItemBean("launchTimeTest", LaunchTimeActivity.class),
             new MainItemBean("finishTest", FinishActivity.class),
             new MainItemBean("ANRTest", AnrActivity.class),
