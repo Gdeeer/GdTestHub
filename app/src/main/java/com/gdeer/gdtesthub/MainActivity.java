@@ -3,6 +3,7 @@ package com.gdeer.gdtesthub;
 import com.gdeer.gdtesthub.anr.AnrActivity;
 import com.gdeer.gdtesthub.dayDream.MyDaydreamService;
 import com.gdeer.gdtesthub.db.DbActivity;
+import com.gdeer.gdtesthub.decorView.DecorActivity;
 import com.gdeer.gdtesthub.finish.FinishActivity;
 import com.gdeer.gdtesthub.launchTime.LaunchTimeActivity;
 import com.gdeer.gdtesthub.location.LocationActivity;
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initDataList() {
         MainItemBean[] list = new MainItemBean[]{
+            new MainItemBean("decorView", DecorActivity.class),
             new MainItemBean("ViewFlipper", ViewFlipperActivity.class),
             new MainItemBean("launchTimeTest", LaunchTimeActivity.class),
             new MainItemBean("finishTest", FinishActivity.class),
