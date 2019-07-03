@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gdeer.gdtesthub">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,78 +14,63 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".decorView.DecorActivity">
+        <activity android:name=".constraintLayout.ConstraintActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".viewFliper.ViewFlipperActivity">
+        <activity android:name=".decorView.DecorActivity">
         </activity>
-        <activity android:name=".simpleList.MyListActivity">
-        </activity>
-        <activity android:name=".simpleList.MyLauncherActivity">
-        </activity>
+        <activity android:name=".viewFliper.ViewFlipperActivity"></activity>
+        <activity android:name=".simpleList.MyListActivity"></activity>
+        <activity android:name=".simpleList.MyLauncherActivity"></activity>
         <activity
             android:name=".launchTime.LaunchTimeActivity"
-            android:exported="true">
-        </activity>
-        <activity android:name=".viewModel.VmActivity">
-        </activity>
-        <activity android:name=".textView.TextActivity">
-        </activity>
+            android:exported="true"></activity>
+        <activity android:name=".viewModel.VmActivity"></activity>
+        <activity android:name=".textView.TextActivity"></activity>
         <activity
             android:name=".handler.HandlerActivity"
             android:label="@string/title_activity_handler"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".retrofit.RetrofitActivity">
-        </activity>
-        <activity android:name=".db.coverUpgradeTest.CoverUpgradeActivity">
-        </activity>
-        <activity android:name=".db.room.RoomActivity">
-        </activity>
-        <activity android:name=".db.DbActivity">
-        </activity>
-        <activity android:name=".location.LocationActivity">
-        </activity> <!-- This service is only used on devices with API v17+ -->
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".retrofit.RetrofitActivity"></activity>
+        <activity android:name=".db.coverUpgradeTest.CoverUpgradeActivity"></activity>
+        <activity android:name=".db.room.RoomActivity"></activity>
+        <activity android:name=".db.DbActivity"></activity>
+        <activity android:name=".location.LocationActivity"></activity> <!-- This service is only used on devices with API v17+ -->
         <service
             android:name=".dayDream.MyDaydreamService"
             android:exported="true"
             android:permission="android.permission.BIND_DREAM_SERVICE">
             <intent-filter>
-                <action android:name="android.service.dreams.DreamService"/>
+                <action android:name="android.service.dreams.DreamService" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </service>
 
-        <activity android:name=".activitythis.ThisActivity">
-        </activity>
+        <activity android:name=".activitythis.ThisActivity"></activity>
 
         <service
             android:name=".anr.MyService"
             android:enabled="true"
-            android:exported="true">
-        </service>
+            android:exported="true"></service>
 
         <receiver
             android:name=".anr.MyReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="anr_test"/>
+                <action android:name="anr_test" />
             </intent-filter>
         </receiver>
 
-        <activity android:name=".anr.AnrActivity">
-        </activity>
-        <activity android:name=".finish.FinishActivity">
-        </activity>
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".anr.AnrActivity"></activity>
+        <activity android:name=".finish.FinishActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
