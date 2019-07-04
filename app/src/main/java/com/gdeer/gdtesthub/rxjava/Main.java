@@ -1,6 +1,8 @@
 package com.gdeer.gdtesthub.rxjava;
 
 import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
@@ -65,13 +67,31 @@ public class Main {
             .observeOn(Schedulers.io())
             .subscribe(observer);
 
-        Thread.sleep(2000);
 
-        new Thread(new Runnable() {
+        getObservableBitmap()
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(String s) throws Exception {
+                        System.out.println(s);
+                    }
+                });
+
+        Thread.sleep(2000);
+    }
+
+    public static Observable<String> getObservableBitmap() {
+        return Observable.create(new ObservableOnSubscribe<String>() {
             @Override
-            public void run() {
-                System.out.println(1);
+            public void subscribe(ObservableEmitter<String> e) {
+                System.out.println("getObservableBitmap " + Thread.currentThread());
+                String s = "sss";
+                if (s != null) {
+                    e.onNext(s);
+                } else {
+                    e.onError(new NullPointerException());
+                }
             }
-        }).start();
+        });
     }
 }
