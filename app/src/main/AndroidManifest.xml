@@ -14,20 +14,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".jump.TargetActivity"
-            android:taskAffinity=".gdeer.target"
-            android:theme="@style/TargetTheme"></activity>
-        <activity
-            android:name=".jump.JumpActivity"
-            android:launchMode="singleTask">
+        <activity android:name=".fragment.FragmentLifeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".constraintLayout.ConstraintActivity"></activity>
+        <activity
+            android:name=".jump.TargetActivity"
+            android:taskAffinity=".gdeer.target"
+            android:theme="@style/TargetTheme" />
+        <activity
+            android:name=".jump.JumpActivity"
+            android:launchMode="singleTask">
+        </activity>
+        <activity android:name=".constraintLayout.ConstraintActivity" />
         <activity android:name=".decorView.DecorActivity" />
         <activity android:name=".viewFliper.ViewFlipperActivity" />
         <activity android:name=".simpleList.MyListActivity" />
