@@ -14,6 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".viewToBitmap.ViewToBitmapActivity">
+        </activity>
         <activity android:name=".fragment.FragmentLifeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,8 +29,7 @@
             android:theme="@style/TargetTheme" />
         <activity
             android:name=".jump.JumpActivity"
-            android:launchMode="singleTask">
-        </activity>
+            android:launchMode="singleTask"></activity>
         <activity android:name=".constraintLayout.ConstraintActivity" />
         <activity android:name=".decorView.DecorActivity" />
         <activity android:name=".viewFliper.ViewFlipperActivity" />
