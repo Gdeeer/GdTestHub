@@ -3,10 +3,10 @@ package com.gdeer.gdtesthub.rxjava;
 import android.annotation.SuppressLint;
 
 import io.reactivex.Flowable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 
 /**
+ * 静态方法
  * 合并多个 Observable，任一 Observable 发布产品时，将这个产品跟其他 Observable 的最新产品一起处理后发布
  * 当所有 Observable 都有产品发布后才开始一起处理、发布
  * 挺绕的，看看官网的图吧
@@ -24,11 +24,6 @@ public class CombineLatest {
                 return (String) objects[0] + objects[1] + objects[2];
             }
         })
-            .subscribe(new Consumer() {
-                @Override
-                public void accept(Object o) throws Exception {
-                    System.out.println(o);
-                }
-            });
+            .subscribe(System.out::println);
     }
 }

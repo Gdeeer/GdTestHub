@@ -15,8 +15,11 @@ import io.reactivex.Flowable;
 public class Interval {
     public static void main(String[] args) {
         Subscriber<Object> subscriber = new PrintSubscriber();
-        Flowable.interval(1, TimeUnit.SECONDS)
-            .subscribe(System.out::println);
+        Flowable flowable = Flowable.interval(1, TimeUnit.SECONDS);
+        flowable.subscribe(o -> System.out.println("first: " + o));
+        Flowable.timer(2, TimeUnit.SECONDS)
+            .subscribe(aLong -> flowable.subscribe(o -> System.out.println("second: " + o)));
+
 
         ThreadUtil.sleep10s();
     }

@@ -10,6 +10,7 @@ import io.reactivex.Flowable;
  * 每个产品可能处于多个 window 区间内
  * window 的开启：left、right 中有产品发布，就会开启一个该产品对应的 window
  * window 的关闭：产品对应 window 的关闭由它的 leftEnd、rightEnd 两个 Observable 决定，leftEnd、rightEnd 发布一个产品或宣布结束，就会关闭它的 window
+ * 很绕，看看官网的图和demo吧（可用于生成其他的操作符）
  */
 public class Join {
     public static void main(String[] args) {
