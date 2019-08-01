@@ -15,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".drawable.DrawableActivity">
-
+        </activity>
+        <activity android:name=".dot9.Dot9Activity"
+            android:theme="@style/Dot9Theme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
