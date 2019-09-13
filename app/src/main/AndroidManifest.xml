@@ -2,11 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gdeer.gdtesthub">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,25 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".drawable.DrawableActivity">
-        </activity>
-        <activity android:name=".dot9.Dot9Activity"
-            android:theme="@style/Dot9Theme">
+        <activity android:name=".glide.BitmapActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".deviceFile.SysDirActivity">
+        </activity>
+        <activity android:name=".deviceFile.DeviceFileActivity"></activity>
+        <activity android:name=".drawable.DrawableActivity" />
+        <activity
+            android:name=".dot9.Dot9Activity"
+            android:theme="@style/Dot9Theme" />
         <activity android:name=".viewToBitmap.ViewToBitmapActivity" />
-        <activity android:name=".fragment.FragmentLifeActivity"></activity>
+        <activity android:name=".fragment.FragmentLifeActivity" />
         <activity
             android:name=".jump.TargetActivity"
             android:taskAffinity=".gdeer.target"
             android:theme="@style/TargetTheme" />
         <activity
             android:name=".jump.JumpActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask" />
         <activity android:name=".constraintLayout.ConstraintActivity" />
         <activity android:name=".decorView.DecorActivity" />
         <activity android:name=".viewFliper.ViewFlipperActivity" />
@@ -52,6 +51,22 @@
         <activity android:name=".db.room.RoomActivity" />
         <activity android:name=".db.DbActivity" />
         <activity android:name=".location.LocationActivity" /> <!-- This service is only used on devices with API v17+ -->
+        <activity android:name=".activitythis.ThisActivity" />
+
+        <activity android:name=".anr.AnrActivity" />
+
+        <activity android:name=".finish.FinishActivity" />
+
+        <activity android:name=".MainActivity" />
+
+        <receiver
+            android:name=".anr.MyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="anr_test" />
+            </intent-filter>
+        </receiver>
         <service
             android:name=".dayDream.MyDaydreamService"
             android:exported="true"
@@ -62,26 +77,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </service>
-
-        <activity android:name=".activitythis.ThisActivity" />
-
         <service
             android:name=".anr.MyService"
             android:enabled="true"
             android:exported="true" />
-
-        <receiver
-            android:name=".anr.MyReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="anr_test" />
-            </intent-filter>
-        </receiver>
-
-        <activity android:name=".anr.AnrActivity" />
-        <activity android:name=".finish.FinishActivity" />
-        <activity android:name=".MainActivity" />
     </application>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>
