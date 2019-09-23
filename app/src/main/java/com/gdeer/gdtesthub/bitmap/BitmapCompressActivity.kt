@@ -2,11 +2,14 @@ package com.gdeer.gdtesthub.bitmap
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Matrix
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import com.gdeer.gdtesthub.R
 import kotlinx.android.synthetic.main.activity_bitmap_compress.*
+import java.io.ByteArrayInputStream
+import java.io.ByteArrayOutputStream
 
 
 class BitmapCompressActivity : AppCompatActivity() {
@@ -22,15 +25,15 @@ class BitmapCompressActivity : AppCompatActivity() {
         }
 
         btn_quality.setOnClickListener {
-            // todo
+            quality()
         }
 
         btn_options.setOnClickListener {
-            // todo
+            options()
         }
 
         btn_matrix.setOnClickListener {
-            // todo
+            matrix()
         }
 
         btn_rgb565.setOnClickListener {
@@ -60,28 +63,69 @@ class BitmapCompressActivity : AppCompatActivity() {
 
     fun origin() {
         val bm = BitmapFactory.decodeResource(resources, drawableId, null)
-        log(bm, "压缩前")
         imageView3.setImageBitmap(bm)
+        log(bm, "压缩前")
+    }
+
+    fun quality() {
+        val bmRaw = BitmapFactory.decodeResource(resources, drawableId, null)
+
+        val baos = ByteArrayOutputStream()
+        // 质量压缩方法,这里100表示不压缩,把压缩后的数据存放到baos中
+        bmRaw.compress(Bitmap.CompressFormat.JPEG, 50, baos)
+        val bais = ByteArrayInputStream(baos.toByteArray())
+        val bmScaled = BitmapFactory.decodeStream(bais, null, null)
+        imageView3.setImageBitmap(bmScaled)
+        log(bmScaled)
+
+        val bytesLength = bitmapToByteArray(bmRaw)?.size
+        Log.d("zhangjl", "压缩前 bytesLength:$bytesLength")
+        Log.d("zhangjl", "压缩后 bytesLength:${baos.toByteArray().size}")
+    }
+
+    private fun options() {
+        val options = BitmapFactory.Options()
+        options.inSampleSize = 2
+        val bmScaled = BitmapFactory.decodeResource(resources, drawableId, options)
+        imageView3.setImageBitmap(bmScaled)
+        log(bmScaled)
+    }
+
+    private fun matrix() {
+        val bmRaw = BitmapFactory.decodeResource(resources, drawableId, null)
+        val matrix = Matrix()
+        matrix.setScale(0.5f, 0.5f)
+        val bmScaled = Bitmap.createBitmap(bmRaw, 0, 0, bmRaw.width, bmRaw.height, matrix, true)
+        imageView3.setImageBitmap(bmScaled)
+        log(bmScaled)
     }
 
     fun rgb565() {
         val options = BitmapFactory.Options()
         options.inPreferredConfig = Bitmap.Config.RGB_565
-
-        val bm = BitmapFactory.decodeResource(resources, drawableId, options)
-        log(bm)
-        imageView3.setImageBitmap(bm)
+        val bmNew = BitmapFactory.decodeResource(resources, drawableId, options)
+        imageView3.setImageBitmap(bmNew)
+        log(bmNew)
     }
 
     private fun rgb565Copy() {
-        val bm = BitmapFactory.decodeResource(resources, drawableId, null)
-        val bm1 = bm.copy(Bitmap.Config.RGB_565, true)
-        log(bm1)
-        imageView3.setImageBitmap(bm1)
+        val bmRaw = BitmapFactory.decodeResource(resources, drawableId, null)
+        val bmScaled = bmRaw.copy(Bitmap.Config.RGB_565, true)
+        imageView3.setImageBitmap(bmScaled)
+        log(bmScaled)
     }
 
     fun log(bm: Bitmap, prefix: String = "压缩后") {
         Log.i("zhangjl", "${prefix}图片大小 ${bm.byteCount / 1024}K " +
-                " 宽度为 ${bm.width}  高度为 ${bm.height}")
+                "宽度:${bm.width} " +
+                "高度:${bm.height} "
+        )
+    }
+
+    private fun bitmapToByteArray(bm: Bitmap): ByteArray? {
+        val baos = ByteArrayOutputStream()
+        // 质量压缩方法,这里100表示不压缩,把压缩后的数据存放到baos中
+        bm.compress(Bitmap.CompressFormat.PNG, 100, baos)
+        return baos.toByteArray()
     }
 }
