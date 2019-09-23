@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".bitmap.BitmapCompressActivity">
+        <activity android:name=".bitmap.BitmapCompressActivity" />
+        <activity android:name=".glide.BitmapActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,6 +22,9 @@
             android:name=".dot9.Dot9Activity"
             android:theme="@style/Dot9Theme">
         </activity>
+        <activity android:name=".deviceFile.SysDirActivity">
+        </activity>
+        <activity android:name=".deviceFile.DeviceFileActivity"></activity>
         <activity android:name=".viewToBitmap.ViewToBitmapActivity" />
         <activity android:name=".fragment.FragmentLifeActivity" />
         <activity
@@ -80,6 +84,8 @@
             android:enabled="true"
             android:exported="true" />
     </application>
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
