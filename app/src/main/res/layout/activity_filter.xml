@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".bitmap.FilterActivity">
+
+    <Button
+        android:id="@+id/btn_origin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="orgin"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_filter_true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="filter_true"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_origin" />
+
+    <Button
+        android:id="@+id/btn_filter_false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="filter_false"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_filter_true" />
+
+    <ImageView
+        android:id="@+id/iv_filter"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sun_png8_little" />
+</android.support.constraint.ConstraintLayout>

@@ -9,22 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".bitmap.BitmapCompressActivity" />
-        <activity android:name=".glide.BitmapActivity">
+        <activity android:name=".bitmap.FilterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".drawable.DrawableActivity"></activity>
+        <activity android:name=".bitmap.BitmapCompressActivity" />
+        <activity android:name=".glide.BitmapActivity">
+        </activity>
+        <activity android:name=".drawable.DrawableActivity" />
         <activity
             android:name=".dot9.Dot9Activity"
-            android:theme="@style/Dot9Theme">
-        </activity>
-        <activity android:name=".deviceFile.SysDirActivity">
-        </activity>
-        <activity android:name=".deviceFile.DeviceFileActivity"></activity>
+            android:theme="@style/Dot9Theme"></activity>
+        <activity android:name=".deviceFile.SysDirActivity"></activity>
+        <activity android:name=".deviceFile.DeviceFileActivity" />
         <activity android:name=".viewToBitmap.ViewToBitmapActivity" />
         <activity android:name=".fragment.FragmentLifeActivity" />
         <activity
@@ -54,11 +54,8 @@
         <activity android:name=".db.DbActivity" />
         <activity android:name=".location.LocationActivity" /> <!-- This service is only used on devices with API v17+ -->
         <activity android:name=".activitythis.ThisActivity" />
-
         <activity android:name=".anr.AnrActivity" />
-
         <activity android:name=".finish.FinishActivity" />
-
         <activity android:name=".MainActivity" />
 
         <receiver
@@ -69,6 +66,7 @@
                 <action android:name="anr_test" />
             </intent-filter>
         </receiver>
+
         <service
             android:name=".dayDream.MyDaydreamService"
             android:exported="true"
@@ -84,12 +82,11 @@
             android:enabled="true"
             android:exported="true" />
     </application>
-
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>
