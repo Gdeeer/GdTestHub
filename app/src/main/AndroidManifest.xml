@@ -8,23 +8,23 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
+        android:name=".systrace.TraceApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".systrace.TraceApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".systrace.TraceActivity">
+        <activity android:name=".okhttp.OkHttpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".glide.LoadActivity">
-        </activity>
+        <activity android:name=".systrace.TraceActivity"></activity>
+        <activity android:name=".glide.LoadActivity"></activity>
         <activity android:name=".context.StartTestActivity" />
         <activity android:name=".bitmap.FilterActivity" />
         <activity android:name=".bitmap.BitmapCompressActivity" />
