@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gdeer.gdtesthub">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,15 +14,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:name=".systrace.TraceApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".glide.LoadActivity">
+        <activity android:name=".systrace.TraceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".context.StartTestActivity"></activity>
+        <activity android:name=".glide.LoadActivity">
+        </activity>
+        <activity android:name=".context.StartTestActivity" />
         <activity android:name=".bitmap.FilterActivity" />
         <activity android:name=".bitmap.BitmapCompressActivity" />
         <activity android:name=".glide.BitmapActivity" />
@@ -85,8 +93,4 @@
             android:exported="true" />
     </application>
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 </manifest>
