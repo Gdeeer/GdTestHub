@@ -72,3 +72,10 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.github.bumptech.glide:glide:4.9.0'
 }
+
+apply plugin: 'com.geektime.systrace-plugin'
+systrace {
+    enable = true
+    baseMethodMapFile = "${project.buildDir}/systrace_output/Debug.methodmap"
+    blackListFile = "${project.projectDir}/blacklist/blackMethodList.txt"
+}

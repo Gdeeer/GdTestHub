@@ -4,10 +4,10 @@ buildscript {
     ext.kotlin_version = '1.3.41'
 
     repositories {
+        mavenLocal()
         google()
         jcenter() { url 'https://maven.aliyun.com/repository/jcenter' }
         mavenCentral()
-        
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.3.1'
@@ -17,6 +17,7 @@ buildscript {
         // in the individual module build.gradle files
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
+        classpath ("com.geektime.systrace:systrace-gradle-plugin:1.0") { changing = true }
     }
 }
 
