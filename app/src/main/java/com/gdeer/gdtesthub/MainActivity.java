@@ -1,5 +1,12 @@
 package com.gdeer.gdtesthub;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+
 import com.gdeer.gdtesthub.anr.AnrActivity;
 import com.gdeer.gdtesthub.dayDream.MyDaydreamService;
 import com.gdeer.gdtesthub.db.DbActivity;
@@ -12,14 +19,6 @@ import com.gdeer.gdtesthub.simpleList.MyLauncherActivity;
 import com.gdeer.gdtesthub.textView.TextActivity;
 import com.gdeer.gdtesthub.viewFliper.ViewFlipperActivity;
 import com.gdeer.gdtesthub.viewModel.VmActivity;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.View;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -56,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startIntent(MainItemBean bean) {
-        Log.d("zhangjl", "startIntent " + System.currentTimeMillis());
         Class clazz = bean.getClazz();
         Intent intent = new Intent(this, clazz);
         try {
