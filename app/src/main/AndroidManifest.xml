@@ -16,12 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".okhttp.OkHttpActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".glide.LoadActivity">
         </activity>
         <activity android:name=".systrace.TraceActivity"></activity>
         <activity android:name=".glide.LoadActivity"></activity>
@@ -66,7 +61,14 @@
         <activity android:name=".activitythis.ThisActivity" />
         <activity android:name=".anr.AnrActivity" />
         <activity android:name=".finish.FinishActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <receiver
             android:name=".anr.MyReceiver"
