@@ -3,9 +3,7 @@ package com.gdeer.gdtesthub.utils;
 import android.content.Context;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 
 public class FileUtil {
@@ -18,30 +16,19 @@ public class FileUtil {
      * @param cover         是否覆盖已存在目标文件
      */
     public static void copyFileFromAssets(Context context, String assetFilePath, File targetFile, boolean cover) {
-        if (targetFile.exists()) {
-            if (cover) {
-                targetFile.delete();
-            } else {
-                return;
-            }
+        if (cover && targetFile.exists()) {
+            return;
         }
 
-        InputStream in = null;
-        FileOutputStream out = null;
-        try {
+        try (InputStream in = context.getAssets().open(assetFilePath);
+             FileOutputStream out = new FileOutputStream(targetFile)) {
             byte[] buffer = new byte[5 * 1024];   //一次取出的字节数大小,缓冲区大小
             int numberRead;
-            in = context.getAssets().open(assetFilePath);
-            out = new FileOutputStream(targetFile);
             while ((numberRead = in.read(buffer)) != -1) {
                 out.write(buffer, 0, numberRead);
             }
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            IoUtil.closeSilently(in, out);
         }
     }
 }
