@@ -16,15 +16,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".pluginfy.commonClass.CommonClassActivity">
+        <activity android:name=".listview.ListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter></activity>
+        <activity android:name=".pluginfy.commonClass.CommonClassActivity">
         </activity>
-        <activity android:name=".glide.LoadActivity"></activity>
+        <activity android:name=".glide.LoadActivity" />
         <activity android:name=".systrace.TraceActivity" />
         <activity android:name=".context.StartTestActivity" />
         <activity android:name=".bitmap.FilterActivity" />
@@ -67,8 +68,7 @@
         <activity android:name=".activitythis.ThisActivity" />
         <activity android:name=".anr.AnrActivity" />
         <activity android:name=".finish.FinishActivity" />
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity"></activity>
 
         <receiver
             android:name=".anr.MyReceiver"
