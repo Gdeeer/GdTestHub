@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class NewsFragment extends Fragment {
-    private ListView mListView;
+    private MyListView mListView;
     private MyAdapter mAdapter;
 
     @Nullable
@@ -29,6 +29,7 @@ public class NewsFragment extends Fragment {
         List<String> list = Arrays.asList(array);
         mAdapter = new MyAdapter(list);
         mListView.setAdapter(mAdapter);
+        mListView.setTagName("child");
         mListView.setLayoutParams(new ListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 1200));
         mListView.setBackgroundResource(R.color.colorAccent);
 

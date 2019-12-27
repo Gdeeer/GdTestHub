@@ -1,0 +1,35 @@
+child 不可滑动：
+// down
+: main dispatchTouchEvent() called with: ACTION_DOWN firstTarget: null touchMode: -1 disallowIntercept: false
+: main onInterceptTouchEvent() called with: ACTION_DOWN firstTarget: null touchMode: -1 isDetaching: false disallowIntercept: false
+: main onInterceptTouchEvent() result: false
+: child dispatchTouchEvent() called with: ACTION_DOWN firstTarget: null touchMode: -1 disallowIntercept: false
+: child onInterceptTouchEvent() called with: ACTION_DOWN firstTarget: null touchMode: -1 isDetaching: false disallowIntercept: false
+: child onInterceptTouchEvent() result: false
+: child onTouchEvent() called with: ACTION_DOWN firstTarget: null touchMode: 0 disallowIntercept: false
+: child onTouchEvent() result: true
+: child dispatchTouchEvent() result: true
+: main dispatchTouchEvent() result: true
+// 静止的 move
+: main dispatchTouchEvent() called with: ACTION_MOVE firstTarget: android.view.ViewGroup$TouchTarget@91e0764 touchMode: 0 disallowIntercept: false
+: main onInterceptTouchEvent() called with: ACTION_MOVE firstTarget: android.view.ViewGroup$TouchTarget@91e0764 touchMode: 0 isDetaching: false disallowIntercept: false
+: main onInterceptTouchEvent() result: false
+: child dispatchTouchEvent() called with: ACTION_MOVE firstTarget: null touchMode: 2 disallowIntercept: false
+: child onTouchEvent() called with: ACTION_MOVE firstTarget: null touchMode: 2 disallowIntercept: false
+: child onTouchEvent() result: true
+: child dispatchTouchEvent() result: true
+: main dispatchTouchEvent() result: true
+// 移动的 move
+: main dispatchTouchEvent() called with: ACTION_MOVE firstTarget: android.view.ViewGroup$TouchTarget@91e0764 touchMode: 0 disallowIntercept: false
+: main onInterceptTouchEvent() called with: ACTION_MOVE firstTarget: android.view.ViewGroup$TouchTarget@91e0764 touchMode: 0 isDetaching: false disallowIntercept: false
+: main onInterceptTouchEvent() result: true
+: child dispatchTouchEvent() called with: ACTION_CANCEL firstTarget: null touchMode: 2 disallowIntercept: false
+: child onTouchEvent() called with: ACTION_CANCEL firstTarget: null touchMode: 2 disallowIntercept: false
+: child onTouchEvent() result: true
+: child dispatchTouchEvent() result: true
+: main dispatchTouchEvent() result: true
+// 移动的 move
+: main dispatchTouchEvent() called with: ACTION_MOVE firstTarget: null touchMode: 3 disallowIntercept: false
+: main onTouchEvent() called with: ACTION_MOVE firstTarget: null touchMode: 3 disallowIntercept: false
+: main onTouchEvent() result: true
+: main dispatchTouchEvent() result: true
