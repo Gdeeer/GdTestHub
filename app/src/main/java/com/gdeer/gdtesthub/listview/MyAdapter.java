@@ -39,7 +39,7 @@ public class MyAdapter extends BaseAdapter {
         Context context = parent.getContext();
         MyViewHolder viewHolder = null;
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.layout_item_siple_list, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.layout_item_siple_listview, parent, false);
             viewHolder = new MyViewHolder(convertView);
             convertView.setTag(viewHolder);
         } else {

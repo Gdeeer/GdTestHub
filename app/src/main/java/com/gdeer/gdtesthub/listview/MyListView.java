@@ -4,14 +4,25 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.ListView;
 
 import com.gdeer.gdtesthub.reflect.FieldUtils;
 import com.gdeer.gdtesthub.reflect.MethodUtils;
 
 public class MyListView extends ListView {
+    private static final int DIRECTION_UP = 1;
+    private static final int DIRECTION_DOWN = 2;
+
     private String mTag;
     private boolean mNeedSuperIntercept = true;
+    private boolean mNewsOnTop;
+    private boolean mIsInReadState;
+
+    private int mSwipeDirection;
+    private MotionEvent mLastEvent;
+
+    private SwipeListener mSwipeListener;
 
     public MyListView(Context context) {
         super(context);
@@ -29,8 +40,16 @@ public class MyListView extends ListView {
         this.mTag = mTag;
     }
 
+    public boolean isNeedSuperIntercept() {
+        return mNeedSuperIntercept;
+    }
+
     public void setNeedSuperIntercept(boolean mNeedSuperIntercept) {
         this.mNeedSuperIntercept = mNeedSuperIntercept;
+    }
+
+    public void setSwipeListener(SwipeListener mSwipeListener) {
+        this.mSwipeListener = mSwipeListener;
     }
 
     @Override
@@ -41,6 +60,23 @@ public class MyListView extends ListView {
             + " touchMode: " + getTouchMode()
             + " disallowIntercept: " + isDisallowIntercept()
         );
+
+        if (mLastEvent != null) {
+            float lastY = mLastEvent.getY();
+            float disY = ev.getY() - lastY;
+            if (Math.abs(disY) > 8 && mSwipeListener != null) {
+                if (disY > 0) {
+                    mSwipeListener.onSwipeDown();
+                } else {
+                    mSwipeListener.onSwipeUp();
+                }
+            }
+        }
+        if (ev.getAction() == MotionEvent.ACTION_DOWN || ev.getAction() == MotionEvent.ACTION_MOVE) {
+            mLastEvent = MotionEvent.obtain(ev);
+        } else {
+            mLastEvent = null;
+        }
         boolean result = super.dispatchTouchEvent(ev);
         Log.d("zhangjl", mTag + " dispatchTouchEvent() result: " + result);
         return result;
@@ -55,6 +91,7 @@ public class MyListView extends ListView {
             + " isDetaching: " + getIsDetaching()
             + " disallowIntercept: " + isDisallowIntercept()
         );
+
         boolean result = mNeedSuperIntercept && super.onInterceptTouchEvent(ev);
         Log.d("zhangjl", mTag + " onInterceptTouchEvent() result: " + result);
         return result;
@@ -125,5 +162,22 @@ public class MyListView extends ListView {
             e.printStackTrace();
         }
         return -100;
+    }
+
+    public boolean isReachTop() {
+        boolean result = false;
+        if (getFirstVisiblePosition() == 0) {
+            View topChildView = getChildAt(0);
+            if (topChildView != null) {
+                result = topChildView.getTop() == 0;
+            }
+        }
+        return result;
+    }
+
+    interface SwipeListener {
+        void onSwipeUp();
+
+        void onSwipeDown();
     }
 }

@@ -2,4 +2,5 @@
 <com.gdeer.gdtesthub.listview.MyListView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/lv_frag"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent"
+    android:divider="@null" />

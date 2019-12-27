@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.gdeer.gdtesthub.R;
+import com.gdeer.gdtesthub.utils.DeviceUtil;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,15 +25,19 @@ public class NewsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_news, container, false);
         mListView = view.findViewById(R.id.lv_frag);
 
-        String s = "b b b b b b b b b b b b";
+        String s = "b b b b b b b b b b b b b b b b";
         String[] array = s.split(" ");
         List<String> list = Arrays.asList(array);
         mAdapter = new MyAdapter(list);
         mListView.setAdapter(mAdapter);
         mListView.setTagName("child");
-        mListView.setLayoutParams(new ListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 1200));
+        mListView.setLayoutParams(new ListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         mListView.setBackgroundResource(R.color.colorAccent);
 
         return view;
+    }
+
+    public boolean isReachTop() {
+        return mListView.isReachTop();
     }
 }
