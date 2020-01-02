@@ -21,7 +21,6 @@ public class MyListActivity extends AppCompatActivity {
     private MyAdapter mAdapter;
     private NewsLayout mNewsLayout;
     private NewsFragment mNewsFragment;
-    private boolean mIsInReadState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,48 +41,8 @@ public class MyListActivity extends AppCompatActivity {
 
         mNewsLayout = (NewsLayout) LayoutInflater.from(MyListActivity.this).inflate(R.layout.layout_news, null);
         mListView.addFooterView(mNewsLayout);
-        mListView.setOnScrollListener(new AbsListView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(AbsListView view, int scrollState) {
 
-            }
-
-            @Override
-            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-                View firstVisibleView = view.getChildAt(0);
-
-                if (firstVisibleItem == totalItemCount - 1) {
-                    if (!mIsInReadState) {
-                        mIsInReadState = true;
-                        Log.d("zhangjl", "mIsInReadState = true");
-                    }
-                } else {
-                    if (mIsInReadState) {
-                        mIsInReadState = false;
-                        Log.d("zhangjl", "mIsInReadState = false");
-                    }
-                }
-            }
-        });
-        mListView.setSwipeListener(new MyListView.SwipeListener() {
-            @Override
-            public void onSwipeUp() {
-                Log.d("zhangjl", "swipeUp readState: " + mIsInReadState + " contentReachTop: " + mNewsFragment.isReachTop()
-                    + " needSuper: " + mListView.isNeedSuperIntercept());
-                if (mIsInReadState && mNewsFragment.isReachTop() && mListView.isNeedSuperIntercept()) {
-                    mListView.setNeedSuperIntercept(false);
-                }
-            }
-
-            @Override
-            public void onSwipeDown() {
-                Log.d("zhangjl", "swipeDown readState: " + mIsInReadState + " contentReachTop: " + mNewsFragment.isReachTop()
-                    + " needSuper: " + mListView.isNeedSuperIntercept());
-                if (mIsInReadState && mNewsFragment.isReachTop() && !mListView.isNeedSuperIntercept()) {
-                    mListView.setNeedSuperIntercept(true);
-                }
-            }
-        });
+        mListView.setSwipeListener(() -> mNewsFragment.isReachTop());
 
         new Handler().post(() -> {
             mNewsLayout.setHeight(mListView.getHeight());

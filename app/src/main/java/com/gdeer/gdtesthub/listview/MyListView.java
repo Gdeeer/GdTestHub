@@ -11,15 +11,9 @@ import com.gdeer.gdtesthub.reflect.FieldUtils;
 import com.gdeer.gdtesthub.reflect.MethodUtils;
 
 public class MyListView extends ListView {
-    private static final int DIRECTION_UP = 1;
-    private static final int DIRECTION_DOWN = 2;
-
     private String mTag;
     private boolean mNeedSuperIntercept = true;
-    private boolean mNewsOnTop;
-    private boolean mIsInReadState;
 
-    private int mSwipeDirection;
     private MotionEvent mLastEvent;
 
     private SwipeListener mSwipeListener;
@@ -40,20 +34,16 @@ public class MyListView extends ListView {
         this.mTag = mTag;
     }
 
-    public boolean isNeedSuperIntercept() {
-        return mNeedSuperIntercept;
-    }
-
-    public void setNeedSuperIntercept(boolean mNeedSuperIntercept) {
-        this.mNeedSuperIntercept = mNeedSuperIntercept;
-    }
-
-    public void setSwipeListener(SwipeListener mSwipeListener) {
-        this.mSwipeListener = mSwipeListener;
+    public void setSwipeListener(SwipeListener swipeListener) {
+        this.mSwipeListener = swipeListener;
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (ev == null) {
+            return false;
+        }
+
         String actionStr = MotionEvent.actionToString(ev.getAction());
         Log.d("zhangjl", mTag + " dispatchTouchEvent() called with: " + actionStr
             + " firstTarget: " + getFirstTouchTarget()
@@ -61,14 +51,15 @@ public class MyListView extends ListView {
             + " disallowIntercept: " + isDisallowIntercept()
         );
 
+        boolean controllerHasChanged = false;
         if (mLastEvent != null) {
             float lastY = mLastEvent.getY();
             float disY = ev.getY() - lastY;
-            if (Math.abs(disY) > 8 && mSwipeListener != null) {
+            if (Math.abs(disY) > 0 && mSwipeListener != null) {
                 if (disY > 0) {
-                    mSwipeListener.onSwipeDown();
+                    controllerHasChanged = swipeDown();
                 } else {
-                    mSwipeListener.onSwipeUp();
+                    controllerHasChanged = swipeUp();
                 }
             }
         }
@@ -77,9 +68,44 @@ public class MyListView extends ListView {
         } else {
             mLastEvent = null;
         }
-        boolean result = super.dispatchTouchEvent(ev);
+        boolean result;
+        if (controllerHasChanged) {
+            result = dispatchNewDownTouchEvent(ev);
+        } else {
+            result = super.dispatchTouchEvent(ev);
+        }
         Log.d("zhangjl", mTag + " dispatchTouchEvent() result: " + result);
         return result;
+    }
+
+    private boolean swipeDown() {
+        Log.d("zhangjl", "swipeDown parentReachBottom: " + isReachBottom()
+            + " childReachTop: " + mSwipeListener.isChildListReachTop()
+            + " needSuper: " + mNeedSuperIntercept);
+        if (mSwipeListener != null && mSwipeListener.isChildListReachTop() && !mNeedSuperIntercept) {
+            mNeedSuperIntercept = true;
+            return true;
+        }
+        return false;
+    }
+
+    private boolean swipeUp() {
+        Log.d("zhangjl", "swipeUp parentReachBottom: " + isReachBottom()
+            + " childReachTop: " + mSwipeListener.isChildListReachTop()
+            + " needSuper: " + mNeedSuperIntercept);
+        if (isReachBottom() && mNeedSuperIntercept) {
+            mNeedSuperIntercept = false;
+            return true;
+        }
+        return false;
+    }
+
+    private boolean dispatchNewDownTouchEvent(MotionEvent ev) {
+        if (ev != null) {
+            ev.setAction(MotionEvent.ACTION_DOWN);
+            return dispatchTouchEvent(ev);
+        }
+        return false;
     }
 
     @Override
@@ -175,9 +201,16 @@ public class MyListView extends ListView {
         return result;
     }
 
-    interface SwipeListener {
-        void onSwipeUp();
+    public boolean isReachBottom() {
+        boolean result = false;
+        if (getLastVisiblePosition() == getCount() - 1) {
+            final View bottomChildView = getChildAt(getLastVisiblePosition() - getFirstVisiblePosition());
+            result = (getHeight() == bottomChildView.getBottom());
+        }
+        return result;
+    }
 
-        void onSwipeDown();
+    interface SwipeListener {
+        boolean isChildListReachTop();
     }
 }
