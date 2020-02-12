@@ -27,6 +27,7 @@
         </activity>
         <activity android:name=".glide.LoadActivity" />
         <activity android:name=".systrace.TraceActivity" />
+        <activity android:name=".notification.NotiEnableActivity"></activity>
         <activity android:name=".context.StartTestActivity" />
         <activity android:name=".bitmap.FilterActivity" />
         <activity android:name=".bitmap.BitmapCompressActivity" />
