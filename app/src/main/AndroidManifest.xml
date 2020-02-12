@@ -2,13 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gdeer.gdtesthub">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
     <application
-        android:name=".systrace.TraceApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,15 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".listview.MyListActivity">
+        <activity android:name=".pluginfy.androidClass.CommonActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter></activity>
-        <activity android:name=".pluginfy.commonClass.CommonClassActivity">
+            </intent-filter>
         </activity>
+        <activity android:name=".pluginfy.androidClass.StubActivity" />
+        <activity android:name=".listview.MyListActivity"></activity>
+        <activity android:name=".pluginfy.commonClass.CommonClassActivity" />
         <activity android:name=".glide.LoadActivity" />
         <activity android:name=".systrace.TraceActivity" />
         <activity android:name=".notification.NotiEnableActivity"></activity>
@@ -69,7 +65,7 @@
         <activity android:name=".activitythis.ThisActivity" />
         <activity android:name=".anr.AnrActivity" />
         <activity android:name=".finish.FinishActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
 
         <receiver
             android:name=".anr.MyReceiver"
@@ -95,5 +91,11 @@
             android:enabled="true"
             android:exported="true" />
     </application>
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>

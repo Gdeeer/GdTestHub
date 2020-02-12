@@ -1,10 +1,14 @@
-package com.gdeer.gdtesthub.pluginfy;
+package com.gdeer.gdtesthub.pluginfy.hookTest;
 
 import android.util.Log;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
+/**
+ * 自定义 AMSP
+ * 通过 InvocationHandler，动态代理技术
+ */
 public class SelfAMSP implements InvocationHandler {
 
     private Object mOriginAMP;

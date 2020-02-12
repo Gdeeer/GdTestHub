@@ -1,4 +1,4 @@
-package com.gdeer.gdtesthub.pluginfy;
+package com.gdeer.gdtesthub.pluginfy.hookTest;
 
 import android.app.Application;
 import android.content.Context;

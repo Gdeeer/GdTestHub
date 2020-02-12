@@ -14,6 +14,10 @@ import java.lang.reflect.Method;
 
 import dalvik.system.DexClassLoader;
 
+/**
+ * ClassLoader 加载外部 apk 内的普通类
+ * 无需 hook
+ */
 public class CommonClassActivity extends AppCompatActivity {
 
     private static String PLUGIN_APK_NAME = "simple.apk";
