@@ -3,6 +3,9 @@ package com.gdeer.gdtesthub.classLoad;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * 加载「同目录下的类」的类加载器
+ */
 class MyClassLoader extends ClassLoader {
     @Override
     public Class<?> loadClass(String name) throws ClassNotFoundException {

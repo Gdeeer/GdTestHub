@@ -1,7 +1,5 @@
 package com.gdeer.gdtesthub.reflect;
 
-import android.text.TextUtils;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.HashMap;

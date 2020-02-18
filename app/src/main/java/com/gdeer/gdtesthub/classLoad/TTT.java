@@ -1,4 +1,10 @@
 package com.gdeer.gdtesthub.classLoad;
 
-public class TTT {
+class TTT {
+
+    BBB bbb = new BBB();
+
+    static class BBB {
+
+    }
 }
