@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SimpleApk</string>
+    <string name="hello_str">hello plugin</string>
 </resources>

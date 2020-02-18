@@ -12,3 +12,17 @@
 /build
 /captures
 .externalNativeBuild
+/simpleApk/*.iml
+/simpleApk/.gradle
+/simpleApk/local.properties
+/simpleApk/.idea/caches
+/simpleApk/.idea/libraries
+/simpleApk/.idea/modules.xml
+/simpleApk/.idea/workspace.xml
+/simpleApk/.idea/navEditor.xml
+/simpleApk/.idea/assetWizardSettings.xml
+/simpleApk/.DS_Store
+/simpleApk/build
+/simpleApk/captures
+/simpleApk/.externalNativeBuild
+/simpleApk/.cxx

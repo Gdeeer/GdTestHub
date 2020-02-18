@@ -15,6 +15,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".pluginfy.resources.ResourcesActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".startflag.ActivityC"
             android:exported="true"
@@ -30,14 +39,7 @@
         <activity
             android:name=".startflag.ActivityA"
             android:exported="true"
-            android:label="ActivityA">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:label="ActivityA" />
         <activity android:name=".pluginfy.androidClass.CommonActivity" />
         <activity android:name=".pluginfy.androidClass.StubActivity" />
         <activity android:name=".listview.MyListActivity" />
