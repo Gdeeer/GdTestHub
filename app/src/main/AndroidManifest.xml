@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gdeer.gdtesthub">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +15,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".pluginfy.androidClass.CommonActivity">
+        <activity
+            android:name=".startflag.ActivityC"
+            android:exported="true"
+            android:label="ActivityC"
+            android:taskAffinity=".ActivityC" />
+
+        <activity
+            android:name=".startflag.ActivityB"
+            android:exported="true"
+            android:label="ActivityB"
+            android:taskAffinity=".ActivityB" />
+
+        <activity
+            android:name=".startflag.ActivityA"
+            android:exported="true"
+            android:label="ActivityA">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -18,12 +38,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".pluginfy.androidClass.CommonActivity" />
         <activity android:name=".pluginfy.androidClass.StubActivity" />
-        <activity android:name=".listview.MyListActivity"></activity>
+        <activity android:name=".listview.MyListActivity" />
         <activity android:name=".pluginfy.commonClass.CommonClassActivity" />
         <activity android:name=".glide.LoadActivity" />
         <activity android:name=".systrace.TraceActivity" />
-        <activity android:name=".notification.NotiEnableActivity"></activity>
+        <activity android:name=".notification.NotiEnableActivity" />
         <activity android:name=".context.StartTestActivity" />
         <activity android:name=".bitmap.FilterActivity" />
         <activity android:name=".bitmap.BitmapCompressActivity" />
@@ -91,11 +112,5 @@
             android:enabled="true"
             android:exported="true" />
     </application>
-
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>
