@@ -16,13 +16,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".pluginfy.resources.ResourcesActivity">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".startflag.ActivityC"
@@ -80,7 +73,14 @@
             android:name=".handler.HandlerActivity"
             android:label="@string/title_activity_handler"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".retrofit.RetrofitActivity" />
+        <activity android:name=".retrofit.RetrofitActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".db.coverUpgradeTest.CoverUpgradeActivity" />
         <activity android:name=".db.room.RoomActivity" />
         <activity android:name=".db.DbActivity" />
