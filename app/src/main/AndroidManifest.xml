@@ -59,7 +59,14 @@
         <activity
             android:name=".jump.JumpActivity"
             android:launchMode="singleTask" />
-        <activity android:name=".constraintLayout.ConstraintActivity" />
+        <activity android:name=".constraintLayout.ConstraintActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".decorView.DecorActivity" />
         <activity android:name=".viewFliper.ViewFlipperActivity" />
         <activity android:name=".simpleList.MyListActivity" />
@@ -74,12 +81,6 @@
             android:label="@string/title_activity_handler"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".retrofit.RetrofitActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".db.coverUpgradeTest.CoverUpgradeActivity" />
         <activity android:name=".db.room.RoomActivity" />

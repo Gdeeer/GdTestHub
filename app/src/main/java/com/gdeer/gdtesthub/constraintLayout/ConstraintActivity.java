@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.constraint.ConstraintSet;
 import android.support.transition.TransitionManager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 import com.gdeer.gdtesthub.R;
 import com.gdeer.gdtesthub.databinding.ActivityConstraintBinding;
@@ -22,10 +21,18 @@ public class ConstraintActivity extends AppCompatActivity {
         mBinding.button2.setOnClickListener(v -> {
             animateToKeyframeTwo();
         });
+
+        mBinding.btnLayerTest.setOnClickListener(v -> {
+            // layer 的使用
+            mBinding.layer.setRotation(30);
+        });
     }
 
     /**
      * 约束变换的帧动画
+     * <p>
+     * 将 button 移至页面底部
+     * 怎么设置时间？
      */
     void animateToKeyframeTwo() {
         ConstraintSet constraintSet = new ConstraintSet();
