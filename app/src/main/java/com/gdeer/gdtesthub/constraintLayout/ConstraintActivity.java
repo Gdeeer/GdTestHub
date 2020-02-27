@@ -31,7 +31,7 @@ public class ConstraintActivity extends AppCompatActivity {
     /**
      * 约束变换的帧动画
      * <p>
-     * 将 button 移至页面底部
+     * 将 button 移至页面底部、并改变宽高
      * 怎么设置时间？
      */
     void animateToKeyframeTwo() {
