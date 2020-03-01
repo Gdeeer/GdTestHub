@@ -17,12 +17,6 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".animation.ChangeHeightActivity" />
         <activity android:name=".animation.RotationActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".imageview.ImgActivity"></activity>
         <activity android:name=".pluginfy.resources.ResourcesActivity">
@@ -32,7 +26,14 @@
             android:exported="true"
             android:label="ActivityC"
             android:taskAffinity=".ActivityC" />
+        <activity android:name=".constraintLayout.MotionLayoutActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".startflag.ActivityB"
             android:exported="true"
