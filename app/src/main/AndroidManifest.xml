@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".imageview.ImgActivity">
+        <activity android:name=".animation.ChangeHeightActivity" />
+        <activity android:name=".animation.RotationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -23,6 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".imageview.ImgActivity"></activity>
         <activity android:name=".pluginfy.resources.ResourcesActivity">
         </activity>
         <activity
@@ -67,14 +69,7 @@
         <activity
             android:name=".jump.JumpActivity"
             android:launchMode="singleTask" />
-        <activity android:name=".constraintLayout.ConstraintActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".constraintLayout.ConstraintActivity" />
         <activity android:name=".decorView.DecorActivity" />
         <activity android:name=".viewFliper.ViewFlipperActivity" />
         <activity android:name=".simpleList.MyListActivity" />
