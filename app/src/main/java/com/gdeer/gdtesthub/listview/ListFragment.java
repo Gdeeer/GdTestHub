@@ -10,19 +10,18 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.gdeer.gdtesthub.R;
-import com.gdeer.gdtesthub.utils.DeviceUtil;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class NewsFragment extends Fragment {
-    private MyListView mListView;
+public class ListFragment extends Fragment {
+    private ChangeConsumerListView mListView;
     private MyAdapter mAdapter;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_news, container, false);
+        View view = inflater.inflate(R.layout.fragment_list, container, false);
         mListView = view.findViewById(R.id.lv_frag);
 
         String s = "b b b b b b b b b b b b b b b b";
@@ -33,7 +32,6 @@ public class NewsFragment extends Fragment {
         mListView.setTagName("child");
         mListView.setLayoutParams(new ListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         mListView.setBackgroundResource(R.color.colorAccent);
-
         return view;
     }
 

@@ -10,7 +10,10 @@ import android.widget.ListView;
 import com.gdeer.gdtesthub.reflect.FieldUtils;
 import com.gdeer.gdtesthub.reflect.MethodUtils;
 
-public class MyListView extends ListView {
+/**
+ * 可改变触摸事件消费者的 ListView
+ */
+public class ChangeConsumerListView extends ListView {
     private String mTag;
     private boolean mNeedSuperIntercept = true;
 
@@ -18,15 +21,15 @@ public class MyListView extends ListView {
 
     private SwipeListener mSwipeListener;
 
-    public MyListView(Context context) {
+    public ChangeConsumerListView(Context context) {
         super(context);
     }
 
-    public MyListView(Context context, AttributeSet attrs) {
+    public ChangeConsumerListView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public MyListView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ChangeConsumerListView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -199,6 +202,13 @@ public class MyListView extends ListView {
             }
         }
         return result;
+    }
+
+    /**
+     * 另一种判断触顶的方法
+     */
+    private boolean isReachTop2() {
+        return !canScrollVertically(-1);
     }
 
     public boolean isReachBottom() {

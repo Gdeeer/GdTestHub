@@ -3,20 +3,19 @@ package com.gdeer.gdtesthub.listview;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
-public class NewsLayout extends LinearLayout {
-    public NewsLayout(Context context) {
+public class FooterLayout extends LinearLayout {
+    public FooterLayout(Context context) {
         super(context);
     }
 
-    public NewsLayout(Context context, @Nullable AttributeSet attrs) {
+    public FooterLayout(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public NewsLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public FooterLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
