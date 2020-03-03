@@ -26,6 +26,9 @@ public class ConstraintActivity extends AppCompatActivity {
             // layer 的使用
             mBinding.layer.setRotation(30);
         });
+
+        // 测试 ConstrainLayout 是否可以容纳超过自身宽高的 View
+        mBinding.clMoveTest.setScrollY(60);
     }
 
     /**
