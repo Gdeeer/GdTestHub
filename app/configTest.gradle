@@ -1,0 +1,22 @@
+configurations {
+    myConfiguration
+}
+
+dependencies {
+    myConfiguration files("$buildDir/classes") {
+        builtBy 'myCompile'
+    }
+}
+
+task myCompile(group: "gdeer") {
+    doLast {
+        println "myCompile exec"
+    }
+}
+
+// 执行 list 时，会先执行 myCompile
+task list(group: "gdeer", dependsOn: configurations.myConfiguration) {
+    doLast {
+        println "classpath = ${configurations.myConfiguration.asPath}"
+    }
+}
