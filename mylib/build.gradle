@@ -4,5 +4,18 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 
+// 在 mylib 中修改 app 中的配置
+project(":app") {
+    myName = "gdeer"
+
+    configurations {
+        gg
+    }
+
+    dependencies {
+        gg "a.b.c:1.0"
+    }
+}
+
 sourceCompatibility = "7"
 targetCompatibility = "7"

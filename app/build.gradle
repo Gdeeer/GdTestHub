@@ -3,6 +3,18 @@ apply plugin: 'com.jakewharton.butterknife'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+ext {
+    myName = "zhangjl"
+}
+
+task showMyName(group: "gdeer") {
+    println "cur myName is $myName"
+    doLast {
+        // myName 会在 mylib 中被修改
+        println "cur myName is $myName"
+    }
+}
+
 android {
     compileSdkVersion 28
     defaultConfig {
