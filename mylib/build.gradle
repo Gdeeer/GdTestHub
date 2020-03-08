@@ -1,7 +1,15 @@
 apply plugin: 'java-library'
 
+configurations {
+    // 此 compileClasspath 为 java-library 中所带的 configuration
+    // 使其继承 gdConfiguration3 这个 configuration 声明的依赖
+    compileClasspath.extendsFrom(gdConfiguration3)
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // mylib2 中的类可以在 mylib 中正常访问
+    gdConfiguration3 project(":mylib2")
 }
 
 // 在 mylib 中修改 app 中的配置

@@ -48,8 +48,9 @@ configurations {
 
 
     // compileClasspath 会继承 gdConfiguration2 声明的依赖
-    // 使用 gdConfiguration2，compileJava 这个 task 能够执行
-    // 但无法正常编译
+    // 但 gdConfiguration2 声明的依赖无法正常使用
+    // 因为 android 插件里没有 compileClasspath 这个 configuration
+    // 这样的配置只是配置了 compileClasspath、gdConfiguration2 两个全新的 configuration
     compileClasspath.extendsFrom(gdConfiguration2)
 
     jasper
@@ -65,7 +66,13 @@ configurations.all {
 
 dependencies {
     // 使用自定义 configuration: gdConfiguration
+    // mylib 中的类可以在 app 中正常访问
     gdConfiguration project(":mylib")
+
+    // 使用自定义 configuration: gdConfiguration
+    // mylib 中的类不能在 app 中访问到
+    // gdConfiguration2 project(":mylib")
+
     // 使用自定义 configuration: jasper
     jasper 'com.github.bumptech.glide:glide:4.9.0'
 
