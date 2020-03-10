@@ -113,7 +113,10 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.9.0'
 
     // 解除 P 上的 private api 访问限制
-    implementation 'me.weishu:free_reflection:2.2.0'
+    implementation('me.weishu:free_reflection:2.2.0') {
+        // Gradle 4.6 后支持，用于说明用途，可在 dependencies 分析报告中展示
+        because "We use it to access the private API on P"
+    }
 }
 
 task preCompileJasper {
