@@ -15,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".bitmap.ChangeColorActivity" />
         <activity android:name=".webview.WebViewActivity">
         </activity>
         <activity android:name=".animation.ChangeHeightActivity" />
@@ -40,7 +41,6 @@
         <activity android:name=".pluginfy.androidClass.CommonActivity" />
         <activity android:name=".pluginfy.androidClass.StubActivity" />
         <activity android:name=".listview.ChangeConsumerActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
