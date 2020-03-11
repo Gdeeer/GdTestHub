@@ -1,6 +1,8 @@
 apply plugin: 'java-library'
 // 提供 mavenDeployer
 apply plugin: 'maven'
+// 提供 publishing
+apply plugin: 'maven-publish'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -34,24 +36,56 @@ artifacts {
     gdArchives someFile
 }
 
-// uploadXXX，是 base plugin 提供的 task，执行后会 upload XXX 管理的 artifact
+group = 'com.gdeer'
+archivesBaseName = 'testArtifact'
+version = '0.0.1'
+
+/**
+ * uploadXXX，是 base plugin 提供的 task，执行后会 upload XXX 管理的 artifact
+ */
 uploadGdArchives {
     repositories {
+        // 上传到本地 maven 仓库
         // maven 插件提供的 mavenDeployer
         mavenDeployer {
-            def info = [
-                    artifactId : 'textArtifact',
-                    groupId    : 'com.gdeer',
-                    versionName: '0.0.1-LOCAL'
-            ]
-            // 必须声明一个仓库，其他都是可选项
-            def url = 'file:D:\\maven\\localMaven'
+            // 会在项目根目录生成文件夹
+            def url = 'file:myRepoMaven'
             repository(url: url)
-            pom.project {
-                version info.versionName
-                artifactId info.artifactId
-                groupId info.groupId
-            }
+        }
+
+        // 上传到本地 maven 仓库
+        maven {
+            // 会在 build.gradle 同目录生成文件夹
+            url "file:myRepoMaven"
+        }
+
+        // 上传到一个普通文件目录
+        flatDir {
+            dirs "libs"
         }
     }
+}
+
+/**
+ * maven-publish 中提供的新的发布方式
+ */
+publishing {
+    // 定义要发布的东西
+    publications {
+        myLibrary(MavenPublication) {
+            from components.java
+        }
+    }
+
+    // 定义要发布的地点
+    repositories {
+        maven {
+            name 'myRepo'
+            url "file:myRepoMaven"
+        }
+    }
+
+    // publications 和 repositories 会组成相应的 task
+    // publish「PubName」PublicationTo「RepoName」Repository：
+    // publish「MyLibrary」PublicationTo「MyRepo」Repository
 }
