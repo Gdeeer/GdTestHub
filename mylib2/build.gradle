@@ -23,7 +23,7 @@ configurations {
  */
 task gdJar(type: Jar) {
     doLast {
-        println "gg exec"
+        println "gdJar exec"
     }
 }
 
@@ -85,14 +85,14 @@ uploadGdArchives {
  * maven-publish 中提供的新的发布方式
  */
 publishing {
-    // 定义要发布的东西
+    // 定义要发布的东西，what
     publications {
         myLibrary(MavenPublication) {
             from components.java
         }
     }
 
-    // 定义要发布的地点
+    // 定义要发布的地点，where
     repositories {
         maven {
             name 'myRepo'
@@ -100,6 +100,7 @@ publishing {
         }
     }
 
+    // how
     // publications 和 repositories 会组成相应的 task
     // publish「PubName」PublicationTo「RepoName」Repository：
     // publish「MyLibrary」PublicationTo「MyRepo」Repository
