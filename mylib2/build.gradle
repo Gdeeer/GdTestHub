@@ -1,4 +1,6 @@
 apply plugin: 'java-library'
+// 提供 mavenDeployer
+apply plugin: 'maven'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -6,3 +8,50 @@ dependencies {
 
 sourceCompatibility = "7"
 targetCompatibility = "7"
+
+configurations {
+    // 创建一个用于声明 artifact 的 configuration
+    gdArchives
+}
+
+/**
+ * 声明一个继承了 Jar 的 task
+ * Jar 执行后会在 build/libs 目录下生成一个 jar 包
+ * 所以 gdJar 执行后也会
+ */
+task gdJar(type: Jar) {
+    doLast {
+        println "gg exec"
+    }
+}
+
+// 声明一个特定的文件
+def someFile = file('src/somefile.txt')
+
+artifacts {
+    // 将 gdJar 和 someFile 都看作 artifact，交给 gdArchives 管理
+    gdArchives gdJar
+    gdArchives someFile
+}
+
+// uploadXXX，是 base plugin 提供的 task，执行后会 upload XXX 管理的 artifact
+uploadGdArchives {
+    repositories {
+        // maven 插件提供的 mavenDeployer
+        mavenDeployer {
+            def info = [
+                    artifactId : 'textArtifact',
+                    groupId    : 'com.gdeer',
+                    versionName: '0.0.1-LOCAL'
+            ]
+            // 必须声明一个仓库，其他都是可选项
+            def url = 'file:D:\\maven\\localMaven'
+            repository(url: url)
+            pom.project {
+                version info.versionName
+                artifactId info.artifactId
+                groupId info.groupId
+            }
+        }
+    }
+}
