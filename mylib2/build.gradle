@@ -12,7 +12,7 @@ sourceCompatibility = "7"
 targetCompatibility = "7"
 
 configurations {
-    // 创建一个用于声明 artifact 的 configuration
+    // 创建一个用于管理 artifact 的 configuration
     gdArchives
 }
 
@@ -31,6 +31,11 @@ task gdJar(type: Jar) {
 def someFile = file('src/somefile.txt')
 
 artifacts {
+    // archives 是 Java 插件所带的 configuration，可用于管理 artifact
+    // 将 gdJar 和 someFile 都看做 artifact，交给 archives 管理
+    archives gdJar
+    archives someFile
+
     // 将 gdJar 和 someFile 都看作 artifact，交给 gdArchives 管理
     gdArchives gdJar
     gdArchives someFile
@@ -41,8 +46,18 @@ archivesBaseName = 'testArtifact'
 version = '0.0.1'
 
 /**
- * uploadXXX，是 base plugin 提供的 task，执行后会 upload XXX 管理的 artifact
+ * upload「configurationName」，是 base plugin 提供的 task，执行后会 upload 「configurationName」 管理的 artifact
+ * 如 uploadArchives、uploadGdArchives
  */
+uploadArchives {
+    repositories {
+        // 上传到一个普通文件目录
+        flatDir {
+            dirs "libs"
+        }
+    }
+}
+
 uploadGdArchives {
     repositories {
         // 上传到本地 maven 仓库
