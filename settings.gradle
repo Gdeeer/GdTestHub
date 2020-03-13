@@ -1,1 +1,1 @@
-include ':app', ':annotation', ':processor', ':mylib', ':mylib2', ':mylib3'
+include ':app', ':annotation', ':processor', ':mylib', ':mylib2'

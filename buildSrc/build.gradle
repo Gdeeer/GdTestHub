@@ -1,0 +1,9 @@
+repositories {
+    jcenter() { url 'https://maven.aliyun.com/repository/jcenter' }
+    maven { url 'http://maven.aliyun.com/nexus/content/repositories/google' }
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+}
+
+dependencies {
+    implementation 'com.android.tools.build:gradle:3.3.1'
+}

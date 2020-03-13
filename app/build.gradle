@@ -3,7 +3,7 @@ apply plugin: 'com.jakewharton.butterknife'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply from: 'configTest.gradle'
-//apply plugin: 'com.gdeer.mylib3'
+apply plugin: LifecyclePlugin
 
 ext {
     myName = "zhangjl"
