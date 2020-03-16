@@ -1,11 +1,11 @@
 import org.objectweb.asm.MethodVisitor
 import org.objectweb.asm.Opcodes
 
-class LifecycleOnCreateMethodVisitor extends MethodVisitor implements Opcodes {
+class LifecycleOnDestroyMethodVisitor extends MethodVisitor implements Opcodes {
 
     private static final String TAG = "zhangjlASM"
 
-    LifecycleOnCreateMethodVisitor(MethodVisitor mv) {
+    LifecycleOnDestroyMethodVisitor(MethodVisitor mv) {
         // Opcodes.ASM4 是 ASM 的 api 版本
         super(Opcodes.ASM5, mv)
     }
@@ -19,7 +19,7 @@ class LifecycleOnCreateMethodVisitor extends MethodVisitor implements Opcodes {
             visitTypeInsn(NEW, "java/lang/StringBuilder")
             visitInsn(DUP)
             visitMethodInsn(INVOKESPECIAL, "java/lang/StringBuilder", "<init>", "()V", false)
-            visitLdcInsn("-------> onCreate : ")
+            visitLdcInsn("-------> onDestroy : ")
             visitMethodInsn(INVOKEVIRTUAL, "java/lang/StringBuilder", "append", "(Ljava/lang/String;)Ljava/lang/StringBuilder;", false)
             visitVarInsn(ALOAD, 0)
             visitMethodInsn(INVOKEVIRTUAL, "java/lang/Object", "getClass", "()Ljava/lang/Class;", false)

@@ -7,12 +7,8 @@ class LifecycleClassVisitor extends ClassVisitor implements Opcodes {
     public static final String TARGET_CLASS_NAME = 'android/support/v4/app/FragmentActivity'
     private String mClassName
 
-    LifecycleClassVisitor(int api) {
-        super(api)
-    }
-
-    LifecycleClassVisitor(int api, ClassVisitor cv) {
-        super(api, cv)
+    LifecycleClassVisitor(ClassVisitor cv) {
+        super(Opcodes.ASM5, cv)
     }
 
     @Override
@@ -27,10 +23,13 @@ class LifecycleClassVisitor extends ClassVisitor implements Opcodes {
         if (TARGET_CLASS_NAME == mClassName) {
             if ("onCreate" == name) {
                 println("change method --> $name")
-                return new LifecycleOnCreateMethodVisitor("ss")
+                return new LifecycleOnCreateMethodVisitor(mv)
+            } else if ("onDestroy" == name) {
+                println("change method --> $name")
+                return new LifecycleOnDestroyMethodVisitor(mv)
             }
         }
-        return super.visitMethod(access, name, desc, signature, exceptions)
+        return mv
     }
 
     @Override
