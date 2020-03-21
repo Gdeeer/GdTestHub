@@ -15,20 +15,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".bitmap.ChangeColorActivity" />
-        <activity android:name=".webview.WebViewActivity">
+        <activity android:name=".touchevent.TouchEventActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".bitmap.ChangeColorActivity" />
+        <activity android:name=".webview.WebViewActivity"></activity>
         <activity android:name=".animation.ChangeHeightActivity" />
-        <activity android:name=".animation.RotationActivity"></activity>
+        <activity android:name=".animation.RotationActivity" />
         <activity android:name=".imageview.ImgActivity" />
-        <activity android:name=".pluginfy.resources.ResourcesActivity"></activity>
+        <activity android:name=".pluginfy.resources.ResourcesActivity" />
         <activity
             android:name=".startflag.ActivityC"
             android:exported="true"
             android:label="ActivityC"
             android:taskAffinity=".ActivityC" />
-        <activity android:name=".constraintLayout.MotionLayoutActivity">
-        </activity>
+        <activity android:name=".constraintLayout.MotionLayoutActivity"></activity>
         <activity
             android:name=".startflag.ActivityB"
             android:exported="true"
@@ -41,12 +46,6 @@
         <activity android:name=".pluginfy.androidClass.CommonActivity" />
         <activity android:name=".pluginfy.androidClass.StubActivity" />
         <activity android:name=".listview.ChangeConsumerActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".pluginfy.commonClass.CommonClassActivity" />
         <activity android:name=".glide.LoadActivity" />
@@ -85,7 +84,7 @@
             android:name=".handler.HandlerActivity"
             android:label="@string/title_activity_handler"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".retrofit.RetrofitActivity"></activity>
+        <activity android:name=".retrofit.RetrofitActivity" />
         <activity android:name=".db.coverUpgradeTest.CoverUpgradeActivity" />
         <activity android:name=".db.room.RoomActivity" />
         <activity android:name=".db.DbActivity" />
