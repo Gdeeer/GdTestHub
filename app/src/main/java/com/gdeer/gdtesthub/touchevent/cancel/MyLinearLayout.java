@@ -1,4 +1,4 @@
-package com.gdeer.gdtesthub.touchevent;
+package com.gdeer.gdtesthub.touchevent.cancel;
 
 import android.content.Context;
 import android.support.annotation.Nullable;

@@ -1,4 +1,4 @@
-package com.gdeer.gdtesthub.touchevent
+package com.gdeer.gdtesthub.touchevent.cancel
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

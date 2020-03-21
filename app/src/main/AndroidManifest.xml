@@ -15,15 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".touchevent.TouchEventActivity">
+        <activity android:name=".touchevent.multitouch.MulTouchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".touchevent.cancel.TouchEventActivity">
+        </activity>
         <activity android:name=".bitmap.ChangeColorActivity" />
-        <activity android:name=".webview.WebViewActivity"></activity>
+        <activity android:name=".webview.WebViewActivity" />
         <activity android:name=".animation.ChangeHeightActivity" />
         <activity android:name=".animation.RotationActivity" />
         <activity android:name=".imageview.ImgActivity" />
@@ -33,7 +35,7 @@
             android:exported="true"
             android:label="ActivityC"
             android:taskAffinity=".ActivityC" />
-        <activity android:name=".constraintLayout.MotionLayoutActivity"></activity>
+        <activity android:name=".constraintLayout.MotionLayoutActivity" />
         <activity
             android:name=".startflag.ActivityB"
             android:exported="true"
@@ -45,8 +47,7 @@
             android:label="ActivityA" />
         <activity android:name=".pluginfy.androidClass.CommonActivity" />
         <activity android:name=".pluginfy.androidClass.StubActivity" />
-        <activity android:name=".listview.ChangeConsumerActivity">
-        </activity>
+        <activity android:name=".listview.ChangeConsumerActivity"></activity>
         <activity android:name=".pluginfy.commonClass.CommonClassActivity" />
         <activity android:name=".glide.LoadActivity" />
         <activity android:name=".systrace.TraceActivity" />
