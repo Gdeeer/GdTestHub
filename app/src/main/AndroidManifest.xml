@@ -15,12 +15,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".touchevent.multitouch.MulTouchActivity">
+        <activity android:name=".okhttp.OkHttpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".touchevent.multitouch.MulTouchActivity">
         </activity>
         <activity android:name=".touchevent.cancel.TouchEventActivity">
         </activity>
