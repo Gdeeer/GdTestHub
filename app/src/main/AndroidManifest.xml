@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gdeer.gdtesthub">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -15,94 +15,93 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".viewpager.ViewPagerActivity"></activity>
         <activity android:name=".okhttp.OkHttpActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".touchevent.multitouch.MulTouchActivity">
-        </activity>
-        <activity android:name=".touchevent.cancel.TouchEventActivity">
-        </activity>
-        <activity android:name=".bitmap.ChangeColorActivity" />
-        <activity android:name=".webview.WebViewActivity" />
-        <activity android:name=".animation.ChangeHeightActivity" />
-        <activity android:name=".animation.RotationActivity" />
-        <activity android:name=".imageview.ImgActivity" />
-        <activity android:name=".pluginfy.resources.ResourcesActivity" />
+        <activity android:name=".touchevent.multitouch.MulTouchActivity"></activity>
+        <activity android:name=".touchevent.cancel.TouchEventActivity"></activity>
+        <activity android:name=".bitmap.ChangeColorActivity"/>
+        <activity android:name=".webview.WebViewActivity"/>
+        <activity android:name=".animation.ChangeHeightActivity"/>
+        <activity android:name=".animation.RotationActivity"/>
+        <activity android:name=".imageview.ImgActivity"/>
+        <activity android:name=".pluginfy.resources.ResourcesActivity"/>
         <activity
             android:name=".startflag.ActivityC"
             android:exported="true"
             android:label="ActivityC"
-            android:taskAffinity=".ActivityC" />
-        <activity android:name=".constraintLayout.MotionLayoutActivity" />
+            android:taskAffinity=".ActivityC"/>
+        <activity android:name=".constraintLayout.MotionLayoutActivity"/>
         <activity
             android:name=".startflag.ActivityB"
             android:exported="true"
             android:label="ActivityB"
-            android:taskAffinity=".ActivityB" />
+            android:taskAffinity=".ActivityB"/>
         <activity
             android:name=".startflag.ActivityA"
             android:exported="true"
-            android:label="ActivityA" />
-        <activity android:name=".pluginfy.androidClass.CommonActivity" />
-        <activity android:name=".pluginfy.androidClass.StubActivity" />
-        <activity android:name=".listview.ChangeConsumerActivity"></activity>
-        <activity android:name=".pluginfy.commonClass.CommonClassActivity" />
-        <activity android:name=".glide.LoadActivity" />
-        <activity android:name=".systrace.TraceActivity" />
-        <activity android:name=".notification.NotiEnableActivity" />
-        <activity android:name=".context.StartTestActivity" />
-        <activity android:name=".bitmap.FilterActivity" />
-        <activity android:name=".bitmap.BitmapCompressActivity" />
-        <activity android:name=".glide.BitmapActivity" />
-        <activity android:name=".drawable.DrawableActivity" />
+            android:label="ActivityA"/>
+        <activity android:name=".pluginfy.androidClass.CommonActivity"/>
+        <activity android:name=".pluginfy.androidClass.StubActivity"/>
+        <activity android:name=".listview.ChangeConsumerActivity"/>
+        <activity android:name=".pluginfy.commonClass.CommonClassActivity"/>
+        <activity android:name=".glide.LoadActivity"/>
+        <activity android:name=".systrace.TraceActivity"/>
+        <activity android:name=".notification.NotiEnableActivity"/>
+        <activity android:name=".context.StartTestActivity"/>
+        <activity android:name=".bitmap.FilterActivity"/>
+        <activity android:name=".bitmap.BitmapCompressActivity"/>
+        <activity android:name=".glide.BitmapActivity"/>
+        <activity android:name=".drawable.DrawableActivity"/>
         <activity
             android:name=".dot9.Dot9Activity"
-            android:theme="@style/Dot9Theme" />
-        <activity android:name=".deviceFile.SysDirActivity" />
-        <activity android:name=".deviceFile.DeviceFileActivity" />
-        <activity android:name=".viewToBitmap.ViewToBitmapActivity" />
-        <activity android:name=".fragment.FragmentLifeActivity" />
+            android:theme="@style/Dot9Theme"/>
+        <activity android:name=".deviceFile.SysDirActivity"/>
+        <activity android:name=".deviceFile.DeviceFileActivity"/>
+        <activity android:name=".viewToBitmap.ViewToBitmapActivity"/>
+        <activity android:name=".fragment.FragmentLifeActivity"/>
         <activity
             android:name=".jump.TargetActivity"
             android:taskAffinity=".gdeer.target"
-            android:theme="@style/TargetTheme" />
+            android:theme="@style/TargetTheme"/>
         <activity
             android:name=".jump.JumpActivity"
-            android:launchMode="singleTask" />
-        <activity android:name=".constraintLayout.ConstraintActivity" />
-        <activity android:name=".decorView.DecorActivity" />
-        <activity android:name=".viewFliper.ViewFlipperActivity" />
-        <activity android:name=".simpleList.MyListActivity" />
-        <activity android:name=".simpleList.MyLauncherActivity" />
+            android:launchMode="singleTask"/>
+        <activity android:name=".constraintLayout.ConstraintActivity"/>
+        <activity android:name=".decorView.DecorActivity"/>
+        <activity android:name=".viewFliper.ViewFlipperActivity"/>
+        <activity android:name=".simpleList.MyListActivity"/>
+        <activity android:name=".simpleList.MyLauncherActivity"/>
         <activity
             android:name=".launchTime.LaunchTimeActivity"
-            android:exported="true" />
-        <activity android:name=".viewModel.VmActivity" />
-        <activity android:name=".textView.TextActivity" />
+            android:exported="true"/>
+        <activity android:name=".viewModel.VmActivity"/>
+        <activity android:name=".textView.TextActivity"/>
         <activity
             android:name=".handler.HandlerActivity"
             android:label="@string/title_activity_handler"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".retrofit.RetrofitActivity" />
-        <activity android:name=".db.coverUpgradeTest.CoverUpgradeActivity" />
-        <activity android:name=".db.room.RoomActivity" />
-        <activity android:name=".db.DbActivity" />
-        <activity android:name=".location.LocationActivity" /> <!-- This service is only used on devices with API v17+ -->
-        <activity android:name=".activitythis.ThisActivity" />
-        <activity android:name=".anr.AnrActivity" />
-        <activity android:name=".finish.FinishActivity" />
-        <activity android:name=".MainActivity" />
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".retrofit.RetrofitActivity"/>
+        <activity android:name=".db.coverUpgradeTest.CoverUpgradeActivity"/>
+        <activity android:name=".db.room.RoomActivity"/>
+        <activity android:name=".db.DbActivity"/>
+        <activity android:name=".location.LocationActivity"/> <!-- This service is only used on devices with API v17+ -->
+        <activity android:name=".activitythis.ThisActivity"/>
+        <activity android:name=".anr.AnrActivity"/>
+        <activity android:name=".finish.FinishActivity"/>
+        <activity android:name=".MainActivity"/>
 
         <receiver
             android:name=".anr.MyReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="anr_test" />
+                <action android:name="anr_test"/>
             </intent-filter>
         </receiver>
 
@@ -111,15 +110,15 @@
             android:exported="true"
             android:permission="android.permission.BIND_DREAM_SERVICE">
             <intent-filter>
-                <action android:name="android.service.dreams.DreamService" />
+                <action android:name="android.service.dreams.DreamService"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </service>
         <service
             android:name=".anr.MyService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"/>
     </application>
 
 </manifest>
