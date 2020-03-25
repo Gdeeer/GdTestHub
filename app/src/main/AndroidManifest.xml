@@ -15,6 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".viewpager.TabActivity"
+            android:label="@string/title_activity_tab"
+            android:theme="@style/AppTheme.NoActionBar">
+
         <activity android:name=".viewpager.ViewPagerActivity"></activity>
         <activity android:name=".okhttp.OkHttpActivity">
             <intent-filter>
@@ -23,6 +28,15 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".okhttp.OkHttpActivity"></activity>
+        <activity android:name=".touchevent.multitouch.MulTouchActivity"></activity>
+        <activity android:name=".touchevent.cancel.TouchEventActivity"></activity>
+        <activity android:name=".bitmap.ChangeColorActivity" />
+        <activity android:name=".webview.WebViewActivity" />
+        <activity android:name=".animation.ChangeHeightActivity" />
+        <activity android:name=".animation.RotationActivity" />
+        <activity android:name=".imageview.ImgActivity" />
+        <activity android:name=".pluginfy.resources.ResourcesActivity" />
         <activity android:name=".touchevent.multitouch.MulTouchActivity"></activity>
         <activity android:name=".touchevent.cancel.TouchEventActivity"></activity>
         <activity android:name=".bitmap.ChangeColorActivity"/>
@@ -45,19 +59,19 @@
         <activity
             android:name=".startflag.ActivityA"
             android:exported="true"
-            android:label="ActivityA"/>
-        <activity android:name=".pluginfy.androidClass.CommonActivity"/>
-        <activity android:name=".pluginfy.androidClass.StubActivity"/>
-        <activity android:name=".listview.ChangeConsumerActivity"/>
-        <activity android:name=".pluginfy.commonClass.CommonClassActivity"/>
-        <activity android:name=".glide.LoadActivity"/>
-        <activity android:name=".systrace.TraceActivity"/>
-        <activity android:name=".notification.NotiEnableActivity"/>
-        <activity android:name=".context.StartTestActivity"/>
-        <activity android:name=".bitmap.FilterActivity"/>
-        <activity android:name=".bitmap.BitmapCompressActivity"/>
-        <activity android:name=".glide.BitmapActivity"/>
-        <activity android:name=".drawable.DrawableActivity"/>
+            android:label="ActivityA" />
+        <activity android:name=".pluginfy.androidClass.CommonActivity" />
+        <activity android:name=".pluginfy.androidClass.StubActivity" />
+        <activity android:name=".listview.ChangeConsumerActivity" />
+        <activity android:name=".pluginfy.commonClass.CommonClassActivity" />
+        <activity android:name=".glide.LoadActivity" />
+        <activity android:name=".systrace.TraceActivity" />
+        <activity android:name=".notification.NotiEnableActivity" />
+        <activity android:name=".context.StartTestActivity" />
+        <activity android:name=".bitmap.FilterActivity" />
+        <activity android:name=".bitmap.BitmapCompressActivity" />
+        <activity android:name=".glide.BitmapActivity" />
+        <activity android:name=".drawable.DrawableActivity" />
         <activity
             android:name=".dot9.Dot9Activity"
             android:theme="@style/Dot9Theme"/>
