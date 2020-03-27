@@ -6,7 +6,10 @@ import android.text.Layout;
 import android.util.AttributeSet;
 import android.util.Log;
 
-public class EllipsizeTextView extends AppCompatTextView {
+/**
+ * Ellipsize 时带后缀的 TextView
+ */
+public class EllipsizeSuffixTextView extends AppCompatTextView {
 
     // 来自 android.text.TextUtils
     private static final String ELLIPSIS_NORMAL = "\u2026"; // (…)
@@ -14,15 +17,15 @@ public class EllipsizeTextView extends AppCompatTextView {
 
     String suffix = ">>";
 
-    public EllipsizeTextView(Context context) {
+    public EllipsizeSuffixTextView(Context context) {
         super(context);
     }
 
-    public EllipsizeTextView(Context context, AttributeSet attrs) {
+    public EllipsizeSuffixTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public EllipsizeTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public EllipsizeSuffixTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

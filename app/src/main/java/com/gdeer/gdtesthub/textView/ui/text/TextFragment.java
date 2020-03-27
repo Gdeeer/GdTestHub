@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.gdeer.gdtesthub.R;
-import com.gdeer.gdtesthub.textView.EllipsizeTextView;
+import com.gdeer.gdtesthub.textView.EllipsizeSuffixTextView;
 
 public class TextFragment extends Fragment {
 
@@ -22,7 +22,8 @@ public class TextFragment extends Fragment {
 
     private TextView mTvNormal;
     private TextView mTvEllipsize;
-    private EllipsizeTextView mTvSpecial;
+    private TextView mTvEllipsizeRetry;
+    private EllipsizeSuffixTextView mTvSpecial;
     private TextView mTvSpecialToNormal;
     private EditText mEditText;
 
@@ -40,11 +41,13 @@ public class TextFragment extends Fragment {
         mTvSpecial = view.findViewById(R.id.tv_special);
         mEditText = view.findViewById(R.id.editText);
         mTvSpecialToNormal = view.findViewById(R.id.tv_special_to_normal);
+        mTvEllipsizeRetry = view.findViewById(R.id.tv_ellipsize_retry);
 
         mTvNormal.setText(mEditText.getText());
         mTvEllipsize.setText(mEditText.getText());
         mTvSpecial.setText(mEditText.getText());
         mTvSpecialToNormal.setText(mTvSpecial.getText());
+        mTvEllipsizeRetry.setText(mTvSpecial.getText());
         mEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -63,6 +66,7 @@ public class TextFragment extends Fragment {
                 mTvEllipsize.setText(s);
                 mTvSpecial.setText(s);
                 mTvSpecialToNormal.setText(mTvSpecial.getText());
+                mTvEllipsizeRetry.setText(s);
             }
 
             @Override

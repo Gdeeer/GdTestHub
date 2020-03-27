@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/text"
@@ -15,35 +14,35 @@
         android:layout_height="wrap_content"
         android:text="TextFragment"
         android:textColor="#ffffff"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/editText"
-        app:layout_constraintRight_toLeftOf="@id/tv_ellipsize"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tv_ellipsize"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/tv_ellipsize"
         android:layout_width="58dp"
         android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
         android:text="TextFragment"
         android:textColor="#ffffff"
-        android:maxLines="2"
-        android:ellipsize="end"
-        app:layout_constraintLeft_toRightOf="@id/tv_normal"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/editText"
-        app:layout_constraintRight_toLeftOf="@id/tv_special"/>
+        app:layout_constraintLeft_toRightOf="@id/tv_normal"
+        app:layout_constraintRight_toLeftOf="@id/tv_special"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <com.gdeer.gdtesthub.textView.EllipsizeTextView
+    <com.gdeer.gdtesthub.textView.EllipsizeSuffixTextView
         android:id="@+id/tv_special"
         android:layout_width="58dp"
         android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
         android:text="TextFragment"
         android:textColor="#ffffff"
-        android:maxLines="2"
-        android:ellipsize="end"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="@id/tv_special_to_normal"
         app:layout_constraintStart_toEndOf="@+id/tv_ellipsize"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
@@ -52,22 +51,35 @@
         android:layout_height="wrap_content"
         android:text="TextFragment"
         android:textColor="#ffffff"
-        app:layout_constraintLeft_toRightOf="@id/tv_special"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/editText"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintLeft_toRightOf="@id/tv_special"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
+        android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:ems="10"
         android:inputType="textPersonName"
         android:text="123456789"
-        android:ems="10"
-        android:id="@+id/editText"
         android:textColor="#ffffff"
-        app:layout_constraintTop_toBottomOf="@+id/tv_special"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_special"/>
+
+    <com.gdeer.gdtesthub.textView.EllipsizeReTryTextView
+        android:id="@+id/tv_ellipsize_retry"
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="TextFragment"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ellipsize"/>
 
 </android.support.constraint.ConstraintLayout>
