@@ -1,11 +1,11 @@
 package com.gdeer.gdtesthub.viewpager.ui.main
 
 import android.content.Context
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
-import android.support.v4.app.FragmentStatePagerAdapter
-import android.support.v4.view.PagerAdapter
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.viewpager.widget.PagerAdapter
 
 private val TAB_TITLES = arrayOf(
         "tab1", "tab2", "tab3", "tab4", "tab5"
@@ -15,12 +15,12 @@ private val TAB_TITLES = arrayOf(
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
  * one of the sections/tabs/pages.
  */
-class SectionsPagerAdapter(private val context: Context, fm: FragmentManager)
-    : FragmentStatePagerAdapter(fm) {
+class SectionsPagerAdapter(private val context: Context, fm: androidx.fragment.app.FragmentManager)
+    : androidx.fragment.app.FragmentStatePagerAdapter(fm) {
 
     val itemFrags = arrayListOf<OuterFragment>()
 
-    override fun getItem(position: Int): Fragment {
+    override fun getItem(position: Int): androidx.fragment.app.Fragment {
         return itemFrags[position]
     }
 
@@ -33,6 +33,6 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager)
     }
 
     override fun getItemPosition(`object`: Any): Int {
-        return PagerAdapter.POSITION_NONE
+        return androidx.viewpager.widget.PagerAdapter.POSITION_NONE
     }
 }

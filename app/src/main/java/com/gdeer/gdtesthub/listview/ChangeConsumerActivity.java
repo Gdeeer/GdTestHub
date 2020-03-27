@@ -2,9 +2,9 @@ package com.gdeer.gdtesthub.listview;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.LayoutInflater;
 
 import com.gdeer.gdtesthub.R;

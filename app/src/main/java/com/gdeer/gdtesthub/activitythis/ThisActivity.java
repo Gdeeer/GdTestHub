@@ -1,13 +1,10 @@
 package com.gdeer.gdtesthub.activitythis;
 
 import com.gdeer.gdtesthub.R;
-import com.gdeer.gdtesthub.anr.AnrActivity;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 
 public class ThisActivity extends AppCompatActivity {

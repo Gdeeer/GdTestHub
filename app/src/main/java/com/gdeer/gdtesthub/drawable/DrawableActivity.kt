@@ -1,7 +1,7 @@
 package com.gdeer.gdtesthub.drawable
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.gdeer.gdtesthub.R
 import com.gdeer.gdtesthub.utils.DeviceUtil
 import kotlinx.android.synthetic.main.activity_drawable.*

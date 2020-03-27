@@ -2,7 +2,7 @@ package com.gdeer.gdtesthub.context
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.gdeer.gdtesthub.R
 import com.gdeer.gdtesthub.bitmap.FilterActivity
 import kotlinx.android.synthetic.main.activity_start_test.*

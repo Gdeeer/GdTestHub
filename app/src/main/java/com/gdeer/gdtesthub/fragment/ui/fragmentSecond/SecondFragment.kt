@@ -1,9 +1,9 @@
 package com.gdeer.gdtesthub.fragment.ui.fragmentSecond
 
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProviders
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +11,7 @@ import android.view.ViewGroup
 
 import com.gdeer.gdtesthub.R
 
-class SecondFragment : Fragment() {
+class SecondFragment : androidx.fragment.app.Fragment() {
 
     companion object {
         fun newInstance() = SecondFragment()
@@ -19,7 +19,7 @@ class SecondFragment : Fragment() {
 
     private lateinit var viewModel: SecondViewModel
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         Log.d("zhangjl", "second onAttach")
         super.onAttach(context)
     }

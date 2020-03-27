@@ -5,7 +5,7 @@ import com.gdeer.gdtesthub.R;
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationManager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;

@@ -1,10 +1,10 @@
 package com.gdeer.gdtesthub.viewpager
 
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
-import android.support.design.widget.TabLayout
-import android.support.v4.view.ViewPager
-import android.support.v7.app.AppCompatActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.tabs.TabLayout
+import androidx.viewpager.widget.ViewPager
+import androidx.appcompat.app.AppCompatActivity
 import com.gdeer.gdtesthub.R
 import com.gdeer.gdtesthub.viewpager.ui.main.OuterFragment
 import com.gdeer.gdtesthub.viewpager.ui.main.SectionsPagerAdapter
@@ -25,7 +25,7 @@ class TabActivity : AppCompatActivity() {
         val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
         sectionsPagerAdapter.itemFrags.addAll(itemFrags)
 
-        val viewPager: ViewPager = findViewById(R.id.view_pager)
+        val viewPager: androidx.viewpager.widget.ViewPager = findViewById(R.id.view_pager)
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = findViewById(R.id.tabs)
         tabs.setupWithViewPager(viewPager)

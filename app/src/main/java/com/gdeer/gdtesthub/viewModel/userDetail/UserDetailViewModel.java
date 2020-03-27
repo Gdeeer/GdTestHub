@@ -2,8 +2,8 @@ package com.gdeer.gdtesthub.viewModel.userDetail;
 
 import com.gdeer.gdtesthub.viewModel.User;
 
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 import android.os.SystemClock;
 
 public class UserDetailViewModel extends ViewModel {

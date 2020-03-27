@@ -2,9 +2,8 @@ package com.gdeer.gdtesthub.finish;
 
 import com.gdeer.gdtesthub.R;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 public class FinishActivity extends AppCompatActivity {

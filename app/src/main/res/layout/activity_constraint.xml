@@ -6,7 +6,7 @@
 
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cons_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -50,7 +50,7 @@
             app:layout_constraintStart_toEndOf="@id/button5"
             app:layout_constraintTop_toBottomOf="@id/btn_layer_test" />
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_move_test"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -101,22 +101,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="parent" />
 
-            <android.support.constraint.Guideline
+            <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="2" />
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <android.support.constraint.helper.Layer
+        <androidx.constraintlayout.helper.widget.Layer
             android:id="@+id/layer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             app:constraint_referenced_ids="button5,button6">
 
-        </android.support.constraint.helper.Layer>
+        </androidx.constraintlayout.helper.widget.Layer>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

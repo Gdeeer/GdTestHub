@@ -1,7 +1,7 @@
 package com.gdeer.gdtesthub.viewpager.ui.main
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +11,7 @@ import com.gdeer.gdtesthub.R
 /**
  * A placeholder fragment containing a simple view.
  */
-class InnerFragment : Fragment() {
+class InnerFragment : androidx.fragment.app.Fragment() {
 
     private var mTag = TAG + "_" + this
 

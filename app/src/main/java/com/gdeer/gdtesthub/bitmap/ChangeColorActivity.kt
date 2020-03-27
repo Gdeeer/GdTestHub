@@ -5,7 +5,7 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.gdeer.gdtesthub.R
 import kotlinx.android.synthetic.main.activity_change_color.*
 

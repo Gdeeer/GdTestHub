@@ -2,8 +2,8 @@ package com.gdeer.gdtesthub.notification
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.NotificationManagerCompat
-import android.support.v7.app.AppCompatActivity
+import androidx.core.app.NotificationManagerCompat
+import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import com.gdeer.gdtesthub.R
 

@@ -4,12 +4,11 @@ import com.gdeer.gdtesthub.R;
 import com.gdeer.gdtesthub.db.coverUpgradeTest.CoverUpgradeActivity;
 import com.gdeer.gdtesthub.db.room.RoomBehavior;
 import com.gdeer.gdtesthub.db.sqlite.SqliteBehavior;
-import com.gdeer.gdtesthub.db.upgradeTest.MyDbHelper;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 public class DbActivity extends AppCompatActivity {

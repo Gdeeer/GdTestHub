@@ -1,9 +1,9 @@
 package com.gdeer.gdtesthub.viewpager.ui.main
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +14,7 @@ import com.gdeer.gdtesthub.R
 /**
  * A placeholder fragment containing a simple view.
  */
-class OuterFragment : Fragment() {
+class OuterFragment : androidx.fragment.app.Fragment() {
 
     private lateinit var pageViewModel: PageViewModel
 

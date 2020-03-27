@@ -2,8 +2,8 @@ package com.gdeer.gdtesthub.viewModel.userList;
 
 import com.gdeer.gdtesthub.viewModel.User;
 
-import android.support.annotation.NonNull;
-import android.support.v7.util.DiffUtil;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
 
 class UserDiffCallback extends DiffUtil.ItemCallback<User> {
     @Override

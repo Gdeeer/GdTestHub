@@ -1,7 +1,7 @@
 package com.gdeer.gdtesthub.simpleList
 
-import android.support.v4.app.ListFragment
+import androidx.fragment.app.ListFragment
 
-class MyListFragment : ListFragment() {
+class MyListFragment : androidx.fragment.app.ListFragment() {
 
 }

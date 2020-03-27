@@ -2,7 +2,7 @@ package com.gdeer.gdtesthub.java;
 
 import org.jetbrains.annotations.NotNull;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 public class NotNullTest {
     @NonNull
