@@ -119,6 +119,8 @@ dependencies {
         // Gradle 4.6 后支持，用于说明用途，可在 dependencies 分析报告中展示
         because "We use it to access the private API on P"
     }
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.2'
 }
 
 task preCompileJasper {

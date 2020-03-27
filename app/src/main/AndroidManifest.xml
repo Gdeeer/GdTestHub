@@ -17,8 +17,7 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".viewpager.TabActivity"
-            android:label="@string/title_activity_tab"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/title_activity_tab">
 
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
