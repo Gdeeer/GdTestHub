@@ -14,13 +14,15 @@ import com.gdeer.gdtesthub.R
 /**
  * A placeholder fragment containing a simple view.
  */
-class PlaceholderFragment : Fragment() {
+class OuterFragment : Fragment() {
 
     private lateinit var pageViewModel: PageViewModel
 
     private var mTag = TAG
 
     private var mView: View? = null
+
+    private var mInnerFragment: InnerFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(mTag, "onCreate")
@@ -34,13 +36,22 @@ class PlaceholderFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        Log.d(mTag, "onCreateView mView == null: ${mView == null}")
+        Log.d(mTag, "onCreateView mView ${if (mView == null) "==" else "!="} null"
+                + " outer: $this"
+                + " inner: $mInnerFragment"
+                + " frags: ${childFragmentManager.findFragmentById(R.id.view_bottom)}")
+
         if (mView == null) {
             mView = inflater.inflate(R.layout.fragment_tab, container, false)
             val textView: TextView? = mView?.findViewById(R.id.section_label)
             pageViewModel.text.observe(this, Observer<String> {
                 textView?.text = it
             })
+            val transaction = childFragmentManager.beginTransaction()
+            mInnerFragment = InnerFragment.newInstance()
+            Log.d(mTag, "InnerFragment.newInstance() $mInnerFragment")
+            transaction.replace(R.id.view_bottom, mInnerFragment!!)
+            transaction.commit()
         }
         return mView
     }
@@ -48,6 +59,16 @@ class PlaceholderFragment : Fragment() {
     override fun onResume() {
         Log.d(mTag, "onResume")
         super.onResume()
+    }
+
+    override fun onPause() {
+        Log.d(mTag, "onPause")
+        super.onPause()
+    }
+
+    override fun onStop() {
+        Log.d(mTag, "onStop")
+        super.onStop()
     }
 
     override fun onDestroyView() {
@@ -61,20 +82,11 @@ class PlaceholderFragment : Fragment() {
     }
 
     companion object {
-        private const val TAG = "PlaceholderFragment"
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
+        private const val TAG = "OuterFragment"
         private const val ARG_SECTION_NUMBER = "section_number"
-
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
         @JvmStatic
-        fun newInstance(sectionNumber: Int): PlaceholderFragment {
-            return PlaceholderFragment().apply {
+        fun newInstance(sectionNumber: Int): OuterFragment {
+            return OuterFragment().apply {
                 arguments = Bundle().apply {
                     putInt(ARG_SECTION_NUMBER, sectionNumber)
                 }

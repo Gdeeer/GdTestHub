@@ -18,7 +18,7 @@ private val TAB_TITLES = arrayOf(
 class SectionsPagerAdapter(private val context: Context, fm: FragmentManager)
     : FragmentStatePagerAdapter(fm) {
 
-    val itemFrags = arrayListOf<PlaceholderFragment>()
+    val itemFrags = arrayListOf<OuterFragment>()
 
     override fun getItem(position: Int): Fragment {
         return itemFrags[position]

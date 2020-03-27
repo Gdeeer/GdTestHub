@@ -6,19 +6,19 @@ import android.support.design.widget.TabLayout
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import com.gdeer.gdtesthub.R
-import com.gdeer.gdtesthub.viewpager.ui.main.PlaceholderFragment
+import com.gdeer.gdtesthub.viewpager.ui.main.OuterFragment
 import com.gdeer.gdtesthub.viewpager.ui.main.SectionsPagerAdapter
 
 class TabActivity : AppCompatActivity() {
 
-    val itemFrags = arrayListOf<PlaceholderFragment>()
+    val itemFrags = arrayListOf<OuterFragment>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tab)
 
-        for (i in 1..5) {
-            val frag = PlaceholderFragment.newInstance(i)
+        for (i in 1..1) {
+            val frag = OuterFragment.newInstance(i)
             itemFrags.add(frag)
         }
 
