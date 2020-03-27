@@ -11,7 +11,7 @@ import com.gdeer.gdtesthub.viewpager.ui.main.SectionsPagerAdapter
 
 class TabActivity : AppCompatActivity() {
 
-    val itemFrags = arrayListOf<OuterFragment>()
+    private val itemFrags = arrayListOf<OuterFragment>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +31,7 @@ class TabActivity : AppCompatActivity() {
         tabs.setupWithViewPager(viewPager)
         val fab: FloatingActionButton = findViewById(R.id.fab)
 
-        fab.setOnClickListener { view ->
+        fab.setOnClickListener {
             sectionsPagerAdapter.notifyDataSetChanged()
         }
     }
