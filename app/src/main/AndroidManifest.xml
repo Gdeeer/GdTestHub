@@ -21,16 +21,17 @@
             android:theme="@style/AppTheme.NoActionBar">
 
             <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".viewpager.ViewPagerActivity"></activity>
-        <activity android:name=".okhttp.OkHttpActivity"></activity>
-        <activity android:name=".touchevent.multitouch.MulTouchActivity"></activity>
-        <activity android:name=".touchevent.cancel.TouchEventActivity"></activity>
+        <activity android:name=".viewpager.ViewPagerActivity" />
+        <activity android:name=".okhttp.OkHttpActivity" />
+        <activity android:name=".touchevent.multitouch.MulTouchActivity" />
+        <activity android:name=".touchevent.cancel.TouchEventActivity" />
         <activity android:name=".bitmap.ChangeColorActivity" />
         <activity android:name=".webview.WebViewActivity" />
         <activity android:name=".animation.ChangeHeightActivity" />
