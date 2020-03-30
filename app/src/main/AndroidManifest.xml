@@ -36,6 +36,8 @@
         <activity android:name=".okhttp.OkHttpActivity" />
         <activity android:name=".touchevent.multitouch.MulTouchActivity" />
         <activity android:name=".touchevent.cancel.TouchEventActivity" />
+        <activity android:name=".leak.LeakActivity" />
+        <activity android:name=".viewpager.ViewPagerActivity"/>
         <activity android:name=".bitmap.ChangeColorActivity" />
         <activity android:name=".webview.WebViewActivity" />
         <activity android:name=".animation.ChangeHeightActivity" />
