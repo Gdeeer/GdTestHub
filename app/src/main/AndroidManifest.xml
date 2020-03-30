@@ -27,6 +27,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".leak.LeakActivity" />
         <activity android:name=".viewpager.ViewPagerActivity"></activity>
         <activity android:name=".okhttp.OkHttpActivity"></activity>
         <activity android:name=".touchevent.multitouch.MulTouchActivity"></activity>
