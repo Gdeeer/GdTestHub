@@ -15,6 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <provider
+            android:name=".contentprovider.MyContentProvider"
+            android:authorities="com.gdeer.contentprovider"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity
             android:name=".viewpager.TabActivity"
             android:label="@string/title_activity_tab">
