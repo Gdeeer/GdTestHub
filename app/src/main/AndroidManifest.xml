@@ -15,16 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <provider
-            android:name=".contentprovider.MyContentProvider"
-            android:authorities="com.gdeer.contentprovider"
-            android:enabled="true"
-            android:exported="true" />
-
-        <activity
-            android:name=".viewpager.TabActivity"
-            android:label="@string/title_activity_tab">
-
+        <activity android:name=".memory.MemoryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
@@ -33,11 +24,20 @@
             </intent-filter>
         </activity>
 
+        <provider
+            android:name=".contentprovider.MyContentProvider"
+            android:authorities="com.gdeer.contentprovider"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".viewpager.TabActivity"
+            android:label="@string/title_activity_tab" />
+
         <activity android:name=".okhttp.OkHttpActivity" />
         <activity android:name=".touchevent.multitouch.MulTouchActivity" />
         <activity android:name=".touchevent.cancel.TouchEventActivity" />
         <activity android:name=".leak.LeakActivity" />
-        <activity android:name=".viewpager.ViewPagerActivity"/>
         <activity android:name=".bitmap.ChangeColorActivity" />
         <activity android:name=".webview.WebViewActivity" />
         <activity android:name=".animation.ChangeHeightActivity" />

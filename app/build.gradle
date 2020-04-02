@@ -121,6 +121,9 @@ dependencies {
     }
 
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.2'
+
+    // 判断设备年份，只支持到 2016
+    implementation 'com.facebook.device.yearclass:yearclass:2.1.0'
 }
 
 task preCompileJasper {

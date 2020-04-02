@@ -3,8 +3,8 @@ package com.gdeer.gdtesthub.leak
 import android.app.Activity
 import android.os.Bundle
 import android.os.Handler
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.gdeer.gdtesthub.R
 import kotlinx.android.synthetic.main.activity_leak.*
 import java.lang.ref.SoftReference
