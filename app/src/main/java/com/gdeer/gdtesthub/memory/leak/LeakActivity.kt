@@ -1,4 +1,4 @@
-package com.gdeer.gdtesthub.leak
+package com.gdeer.gdtesthub.memory.leak
 
 import android.app.Activity
 import android.os.Bundle
