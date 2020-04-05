@@ -15,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".memory.MemoryActivity">
+        <activity
+            android:name=".touchevent.deliver.TouchDeliverActivity"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".memory.MemoryActivity"></activity>
 
         <provider
             android:name=".contentprovider.MyContentProvider"
@@ -33,7 +36,6 @@
         <activity
             android:name=".viewpager.TabActivity"
             android:label="@string/title_activity_tab" />
-
         <activity android:name=".okhttp.OkHttpActivity" />
         <activity android:name=".touchevent.multitouch.MulTouchActivity" />
         <activity android:name=".touchevent.cancel.TouchEventActivity" />
