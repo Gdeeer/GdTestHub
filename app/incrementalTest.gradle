@@ -1,0 +1,86 @@
+// 初始化 inputs 目录
+task originalInputs() {
+    doLast {
+        file('inputs').mkdir()
+        file('inputs/1.txt').text = 'Content for file 1.'
+        file('inputs/2.txt').text = 'Content for file 2.'
+        file('inputs/3.txt').text = 'Content for file 3.'
+    }
+}
+
+// 更新 inputs 目录内容
+task updateInputs() {
+    doLast {
+        file('inputs/1.txt').text = 'Changed content for existing file 1.'
+        file('inputs/4.txt').text = 'Content for new file 4.'
+    }
+}
+
+// 移除一个 input
+task removeInput() {
+    doLast {
+        file('inputs/3.txt').delete()
+    }
+}
+
+// 移除一个 output
+task removeOutput() {
+    doLast {
+        file("$buildDir/outputs/1.txt").delete()
+    }
+}
+
+// 创建 IncrementalReverseTask 类型的 task
+task incrementalReverse(type: IncrementalReverseTask) {
+    println("buildDir: $buildDir")
+    inputDir = file('inputs')
+    outputDir = file("$buildDir/outputs")
+    inputProperty = project.properties['taskInputProperty'] ?: 'original'
+}
+
+class IncrementalReverseTask extends DefaultTask {
+    @InputDirectory
+    // @InputDirectory 指定一个 property 作为 task 的输入目录
+    // 目录的 path 或 content 改变后，task 会被认为 out-of-date
+    File inputDir
+
+    @OutputDirectory
+    // @OutputDirectory 指定一个 property 作为 task 的输出目录
+    // 目录的 path 或 content 改变后，task 会被认为 out-of-date
+    File outputDir
+
+    @Input
+    // @Input 注解指定一个 property 作为 task 的输入值，它的值改变后，task 将会认为 out-of-date
+    // 当使用 File 作为 Input 时，File 的 path 改变才认为 out-of-date；File 的 content 改变不会认为 out-of-date
+    def inputProperty
+
+    @TaskAction
+    // @TaskAction 注解表示 task 要执行的动作
+    void execute(IncrementalTaskInputs inputs) {
+        // inputs.incremental: Gradle 是否能判断 input 的改变
+        // 如一个或多个 output file 发生改变，Gradle 无法判断哪个 input 发生了改变，inputs.incremental 会返回 false
+        // 所以的 input 都会认为 out-of-date
+        println inputs.incremental ? 'CHANGED inputs considered out of date'
+                : 'ALL inputs considered out of date'
+        if (!inputs.incremental)
+            project.delete(outputDir.listFiles())
+
+        // 发生改变的 input
+        inputs.outOfDate { change ->
+            if (change.file.directory) return
+
+            println "out of date: ${change.file.name}"
+            def targetFile = new File(outputDir, change.file.name)
+            targetFile.text = change.file.text.reverse()
+        }
+
+        // 被移除的 input
+        inputs.removed { change ->
+            if (change.file.directory) return
+
+            println "removed: ${change.file.name}"
+            def targetFile = new File(outputDir, change.file.name)
+            targetFile.delete()
+        }
+    }
+}
