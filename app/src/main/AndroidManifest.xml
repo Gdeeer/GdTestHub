@@ -16,11 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".textureview.LiveCameraActivity" />
+        <activity android:name=".animation.LayoutTransitionActivity">
 
-        <activity
-            android:name=".touchevent.deliver.TouchDeliverActivity"
-            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +25,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".memory.MemoryActivity"></activity>
+        <activity android:name=".textureview.LiveCameraActivity" />
+        <activity
+            android:name=".touchevent.deliver.TouchDeliverActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".memory.MemoryActivity" />
 
         <provider
             android:name=".contentprovider.MyContentProvider"
