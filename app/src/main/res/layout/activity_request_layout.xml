@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.gdeer.gdtesthub.traversal.MyLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout_request_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".traversal.RequestLayoutActivity">
+
+    <com.gdeer.gdtesthub.traversal.MyTextView
+        android:id="@+id/tv_request_layout"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="requestLayout"
+        android:textColor="@android:color/white" />
+
+    <com.gdeer.gdtesthub.traversal.MyTextView
+        android:id="@+id/tv_invalidate"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:text="invalidate"
+        android:textColor="@android:color/white" />
+
+</com.gdeer.gdtesthub.traversal.MyLinearLayout>
