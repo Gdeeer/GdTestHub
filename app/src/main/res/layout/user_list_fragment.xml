@@ -6,7 +6,7 @@
     android:id="@+id/vm"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".viewModel.userList.UserListFragment">
+    tools:context=".viewmodel.userList.UserListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_user"

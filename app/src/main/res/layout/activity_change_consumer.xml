@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".listview.ChangeConsumerActivity">
+    tools:context=".view.listview.ChangeConsumerActivity">
 
-    <com.gdeer.gdtesthub.listview.ChangeConsumerListView
+    <com.gdeer.gdtesthub.view.listview.ChangeConsumerListView
         android:id="@+id/lv_change_consumer"
         android:divider="@null"
         android:layout_width="match_parent"

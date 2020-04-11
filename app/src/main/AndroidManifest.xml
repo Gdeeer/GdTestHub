@@ -16,17 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".push.PushActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".push.PushActivity" />
         <activity android:name=".traversal.RequestLayoutActivity" />
         <activity android:name=".animation.LayoutTransitionActivity" />
-        <activity android:name=".textureview.LiveCameraActivity" />
+        <activity android:name=".view.textureview.LiveCameraActivity" />
         <activity
             android:name=".touchevent.deliver.TouchDeliverActivity"
             android:theme="@style/AppTheme" />
@@ -39,24 +32,24 @@
             android:exported="true" />
 
         <activity
-            android:name=".viewpager.TabActivity"
+            android:name="com.gdeer.gdtesthub.view.viewpager.TabActivity"
             android:label="@string/title_activity_tab" />
-        <activity android:name=".okhttp.OkHttpActivity" />
+        <activity android:name=".poplibrary.okhttp.OkHttpActivity" />
         <activity android:name=".touchevent.multitouch.MulTouchActivity" />
         <activity android:name=".touchevent.cancel.TouchEventActivity" />
         <activity android:name=".memory.leak.LeakActivity" />
         <activity android:name=".bitmap.ChangeColorActivity" />
-        <activity android:name=".webview.WebViewActivity" />
+        <activity android:name="com.gdeer.gdtesthub.view.webview.WebViewActivity" />
         <activity android:name=".animation.ChangeHeightActivity" />
         <activity android:name=".animation.RotationActivity" />
-        <activity android:name=".imageview.ImgActivity" />
+        <activity android:name="com.gdeer.gdtesthub.view.imageview.ImgActivity" />
         <activity android:name=".pluginfy.resources.ResourcesActivity" />
         <activity
             android:name=".startflag.ActivityC"
             android:exported="true"
             android:label="ActivityC"
             android:taskAffinity=".ActivityC" />
-        <activity android:name=".constraintLayout.MotionLayoutActivity" />
+        <activity android:name="com.gdeer.gdtesthub.view.constraintlayout.MotionLayoutActivity" />
         <activity
             android:name=".startflag.ActivityB"
             android:exported="true"
@@ -66,24 +59,24 @@
             android:name=".startflag.ActivityA"
             android:exported="true"
             android:label="ActivityA" />
-        <activity android:name=".pluginfy.androidClass.CommonActivity" />
-        <activity android:name=".pluginfy.androidClass.StubActivity" />
-        <activity android:name=".listview.ChangeConsumerActivity" />
-        <activity android:name=".pluginfy.commonClass.CommonClassActivity" />
-        <activity android:name=".glide.LoadActivity" />
+        <activity android:name=".pluginfy.androidclass.CommonActivity" />
+        <activity android:name=".pluginfy.androidclass.StubActivity" />
+        <activity android:name=".view.listview.ChangeConsumerActivity" />
+        <activity android:name=".pluginfy.commonclass.CommonClassActivity" />
+        <activity android:name="com.gdeer.gdtesthub.poplibrary.glide.LoadActivity" />
         <activity android:name=".systrace.TraceActivity" />
         <activity android:name=".notification.NotiEnableActivity" />
         <activity android:name=".context.StartTestActivity" />
         <activity android:name=".bitmap.FilterActivity" />
         <activity android:name=".bitmap.BitmapCompressActivity" />
-        <activity android:name=".glide.BitmapActivity" />
+        <activity android:name="com.gdeer.gdtesthub.poplibrary.glide.BitmapActivity" />
         <activity android:name=".drawable.DrawableActivity" />
         <activity
             android:name=".dot9.Dot9Activity"
             android:theme="@style/Dot9Theme" />
-        <activity android:name=".deviceFile.SysDirActivity" />
-        <activity android:name=".deviceFile.DeviceFileActivity" />
-        <activity android:name=".viewToBitmap.ViewToBitmapActivity" />
+        <activity android:name=".devicefile.SysDirActivity" />
+        <activity android:name=".devicefile.DeviceFileActivity" />
+        <activity android:name=".viewtobitmap.ViewToBitmapActivity" />
         <activity android:name=".fragment.FragmentLifeActivity" />
         <activity
             android:name=".jump.TargetActivity"
@@ -92,22 +85,29 @@
         <activity
             android:name=".jump.JumpActivity"
             android:launchMode="singleTask" />
-        <activity android:name=".constraintLayout.ConstraintActivity" />
-        <activity android:name=".decorView.DecorActivity" />
-        <activity android:name=".viewFliper.ViewFlipperActivity" />
-        <activity android:name=".simpleList.MyListActivity" />
-        <activity android:name=".simpleList.MyLauncherActivity" />
+        <activity android:name="com.gdeer.gdtesthub.view.constraintlayout.ConstraintActivity" />
+        <activity android:name=".view.decorview.DecorActivity" />
+        <activity android:name="com.gdeer.gdtesthub.view.viewfliper.ViewFlipperActivity" />
+        <activity android:name=".simplelist.MyListActivity" />
+        <activity android:name=".simplelist.MyLauncherActivity" />
         <activity
-            android:name=".launchTime.LaunchTimeActivity"
+            android:name=".launchtime.LaunchTimeActivity"
             android:exported="true" />
-        <activity android:name=".viewModel.VmActivity" />
-        <activity android:name=".textView.TextActivity" />
+        <activity android:name=".viewmodel.VmActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.textview.TextActivity" />
         <activity
             android:name=".handler.HandlerActivity"
             android:label="@string/title_activity_handler"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".retrofit.RetrofitActivity" />
-        <activity android:name=".db.coverUpgradeTest.CoverUpgradeActivity" />
+        <activity android:name=".poplibrary.retrofit.RetrofitActivity" />
+        <activity android:name=".db.coverupgradetest.CoverUpgradeActivity" />
         <activity android:name=".db.room.RoomActivity" />
         <activity android:name=".db.DbActivity" />
         <activity android:name=".location.LocationActivity" /> <!-- This service is only used on devices with API v17+ -->
@@ -126,7 +126,7 @@
         </receiver>
 
         <service
-            android:name=".dayDream.MyDaydreamService"
+            android:name=".daydream.MyDaydreamService"
             android:exported="true"
             android:permission="android.permission.BIND_DREAM_SERVICE">
             <intent-filter>

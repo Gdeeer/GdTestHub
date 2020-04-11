@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#008577"
-    tools:context="textView.ui.text.TextFragment">
+    tools:context=".view.textview.ui.text.TextFragment">
 
     <TextView
         android:id="@+id/tv_normal"
@@ -32,7 +32,7 @@
         app:layout_constraintRight_toLeftOf="@id/tv_special"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <com.gdeer.gdtesthub.textView.EllipsizeSuffixTextView
+    <com.gdeer.gdtesthub.view.textview.EllipsizeSuffixTextView
         android:id="@+id/tv_special"
         android:layout_width="58dp"
         android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_special"/>
 
-    <com.gdeer.gdtesthub.textView.EllipsizeReTryTextView
+    <com.gdeer.gdtesthub.view.textview.EllipsizeReTryTextView
         android:id="@+id/tv_ellipsize_retry"
         android:layout_width="58dp"
         android:layout_height="wrap_content"

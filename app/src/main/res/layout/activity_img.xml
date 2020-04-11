@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/w15_blue"
-    tools:context=".imageview.ImgActivity">
+    tools:context=".view.imageview.ImgActivity">
 
-    <com.gdeer.gdtesthub.imageview.PressedImageView
+    <com.gdeer.gdtesthub.view.imageview.PressedImageView
         android:id="@+id/iv_pressed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

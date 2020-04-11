@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".webview.WebViewActivity">
+    tools:context=".view.webview.WebViewActivity">
 
     <Button
         android:id="@+id/btn_check_scroll"
@@ -13,7 +13,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.gdeer.gdtesthub.webview.ScrollWebView
+    <com.gdeer.gdtesthub.view.webview.ScrollWebView
         android:id="@+id/webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

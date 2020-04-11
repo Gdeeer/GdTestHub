@@ -1,7 +1,7 @@
 package com.gdeer.gdtesthub.db;
 
 import com.gdeer.gdtesthub.R;
-import com.gdeer.gdtesthub.db.coverUpgradeTest.CoverUpgradeActivity;
+import com.gdeer.gdtesthub.db.coverupgradetest.CoverUpgradeActivity;
 import com.gdeer.gdtesthub.db.room.RoomBehavior;
 import com.gdeer.gdtesthub.db.sqlite.SqliteBehavior;
 

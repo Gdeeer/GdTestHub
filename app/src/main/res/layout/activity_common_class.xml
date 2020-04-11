@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pluginfy.commonClass.CommonClassActivity">
+    tools:context=".pluginfy.commonclass.CommonClassActivity">
 
     <Button
         android:id="@+id/btn_use_common_class"

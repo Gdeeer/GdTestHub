@@ -8,17 +8,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
 import com.gdeer.gdtesthub.anr.AnrActivity;
-import com.gdeer.gdtesthub.dayDream.MyDaydreamService;
+import com.gdeer.gdtesthub.daydream.MyDaydreamService;
 import com.gdeer.gdtesthub.db.DbActivity;
-import com.gdeer.gdtesthub.decorView.DecorActivity;
+import com.gdeer.gdtesthub.view.decorview.DecorActivity;
 import com.gdeer.gdtesthub.finish.FinishActivity;
-import com.gdeer.gdtesthub.launchTime.LaunchTimeActivity;
+import com.gdeer.gdtesthub.launchtime.LaunchTimeActivity;
 import com.gdeer.gdtesthub.location.LocationActivity;
-import com.gdeer.gdtesthub.retrofit.RetrofitActivity;
-import com.gdeer.gdtesthub.simpleList.MyLauncherActivity;
-import com.gdeer.gdtesthub.textView.TextActivity;
-import com.gdeer.gdtesthub.viewFliper.ViewFlipperActivity;
-import com.gdeer.gdtesthub.viewModel.VmActivity;
+import com.gdeer.gdtesthub.poplibrary.retrofit.RetrofitActivity;
+import com.gdeer.gdtesthub.simplelist.MyLauncherActivity;
+import com.gdeer.gdtesthub.view.textview.TextActivity;
+import com.gdeer.gdtesthub.view.viewfliper.ViewFlipperActivity;
+import com.gdeer.gdtesthub.viewmodel.VmActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;

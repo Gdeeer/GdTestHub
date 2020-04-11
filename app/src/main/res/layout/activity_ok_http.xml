@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".okhttp.OkHttpActivity">
+    tools:context=".poplibrary.okhttp.OkHttpActivity">
 
     <Button
         android:id="@+id/btn_fetch"
