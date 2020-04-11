@@ -1,4 +1,4 @@
-package com.gdeer.gdtesthub.viewModel.userList;
+package com.gdeer.gdtesthub.viewModel.userdiff;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,20 +18,20 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class UserListFragment extends Fragment {
+public class UserDiffFragment extends Fragment {
 
-    public static UserListFragment newInstance() {
-        return new UserListFragment();
+    public static UserDiffFragment newInstance() {
+        return new UserDiffFragment();
     }
 
     @BindView(R.id.rcv_user)
     RecyclerView mRcvUser;
     Unbinder unbinder;
 
-    private UserListViewModel mUserListViewModel;
-    private UserListAdapter mUserListAdapter = new UserListAdapter();
+    private UserDiffViewModel mUserDiffViewModel;
+    private UserDiffAdapter mUserDiffAdapter = new UserDiffAdapter();
 
-    private UserListFragment() {
+    private UserDiffFragment() {
     }
 
     @Nullable
@@ -46,13 +46,13 @@ public class UserListFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mUserListViewModel = ViewModelProviders.of(this).get(UserListViewModel.class);
+        mUserDiffViewModel = ViewModelProviders.of(this).get(UserDiffViewModel.class);
 
         mRcvUser.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        mRcvUser.setAdapter(mUserListAdapter);
-        mUserListViewModel.getUsers().observe(getViewLifecycleOwner(), users -> {
-            mUserListAdapter.setNewData(users);
+        mRcvUser.setAdapter(mUserDiffAdapter);
+        mUserDiffViewModel.getUsers().observe(getViewLifecycleOwner(), users -> {
+            mUserDiffAdapter.submitList(users);
         });
     }
 

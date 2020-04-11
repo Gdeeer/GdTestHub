@@ -1,10 +1,11 @@
 package com.gdeer.gdtesthub.viewModel;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.gdeer.gdtesthub.R;
-import com.gdeer.gdtesthub.viewModel.userDetail.UserDetailFragment;
+import com.gdeer.gdtesthub.viewModel.userList.UserListFragment;
 
 public class VmActivity extends AppCompatActivity {
 
@@ -14,7 +15,7 @@ public class VmActivity extends AppCompatActivity {
         setContentView(R.layout.vm_activity);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, UserDetailFragment.newInstance())
+                .replace(R.id.container, UserListFragment.newInstance())
                 .commitNow();
         }
     }

@@ -21,6 +21,9 @@ public class UserListViewModel extends ViewModel {
         return users;
     }
 
+    /**
+     * 退出 Activity 会造成内存泄漏，泄漏了 Thread 对象
+     */
     private void loadUsers() {
         // Do an asynchronous operation to fetch users.
         new Thread(new Runnable() {

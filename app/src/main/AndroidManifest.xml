@@ -16,14 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".traversal.RequestLayoutActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".traversal.RequestLayoutActivity"></activity>
         <activity android:name=".animation.LayoutTransitionActivity"></activity>
         <activity android:name=".textureview.LiveCameraActivity" />
         <activity
@@ -99,7 +92,14 @@
         <activity
             android:name=".launchTime.LaunchTimeActivity"
             android:exported="true" />
-        <activity android:name=".viewModel.VmActivity" />
+        <activity android:name=".viewModel.VmActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".textView.TextActivity" />
         <activity
             android:name=".handler.HandlerActivity"

@@ -5,9 +5,9 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.gdeer.gdtesthub.R;
 import com.gdeer.gdtesthub.viewModel.User;
 
-public class UserAdapter extends BaseQuickAdapter<User, BaseViewHolder> {
+public class UserListAdapter extends BaseQuickAdapter<User, BaseViewHolder> {
 
-    public UserAdapter() {
+    public UserListAdapter() {
         super(R.layout.layout_item_user_rcv);
     }
 

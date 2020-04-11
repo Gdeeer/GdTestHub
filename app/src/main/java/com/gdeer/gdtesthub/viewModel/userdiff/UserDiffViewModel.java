@@ -1,4 +1,4 @@
-package com.gdeer.gdtesthub.viewModel.userList;
+package com.gdeer.gdtesthub.viewModel.userdiff;
 
 import com.gdeer.gdtesthub.viewModel.User;
 
