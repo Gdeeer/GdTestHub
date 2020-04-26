@@ -28,6 +28,17 @@ android {
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            // 选择要添加的对应 cpu 类型的 .so 库。
+            abiFilters 'armeabi'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "84d00a0c2fc5c5bf2edc2b82", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
     }
     buildTypes {
         release {
@@ -125,6 +136,9 @@ dependencies {
 
     // 判断设备年份，只支持到 2016
     implementation 'com.facebook.device.yearclass:yearclass:2.1.0'
+
+    implementation 'cn.jiguang.sdk:jpush:3.6.0'  // 此处以JPush 3.6.0 版本为例。
+    implementation 'cn.jiguang.sdk:jcore:2.3.4'  // 此处以JCore 2.3.4 版本为例。
 }
 
 task preCompileJasper {
