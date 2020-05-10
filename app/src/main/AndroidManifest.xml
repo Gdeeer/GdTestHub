@@ -16,6 +16,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".view.recyclerview.RcvActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".push.PushActivity" />
         <activity android:name=".traversal.RequestLayoutActivity" />
         <activity android:name=".animation.LayoutTransitionActivity" />
@@ -32,24 +40,24 @@
             android:exported="true" />
 
         <activity
-            android:name="com.gdeer.gdtesthub.view.viewpager.TabActivity"
+            android:name=".view.viewpager.TabActivity"
             android:label="@string/title_activity_tab" />
         <activity android:name=".poplibrary.okhttp.OkHttpActivity" />
         <activity android:name=".touchevent.multitouch.MulTouchActivity" />
         <activity android:name=".touchevent.cancel.TouchEventActivity" />
         <activity android:name=".memory.leak.LeakActivity" />
         <activity android:name=".bitmap.ChangeColorActivity" />
-        <activity android:name="com.gdeer.gdtesthub.view.webview.WebViewActivity" />
+        <activity android:name=".view.webview.WebViewActivity" />
         <activity android:name=".animation.ChangeHeightActivity" />
         <activity android:name=".animation.RotationActivity" />
-        <activity android:name="com.gdeer.gdtesthub.view.imageview.ImgActivity" />
+        <activity android:name=".view.imageview.ImgActivity" />
         <activity android:name=".pluginfy.resources.ResourcesActivity" />
         <activity
             android:name=".startflag.ActivityC"
             android:exported="true"
             android:label="ActivityC"
             android:taskAffinity=".ActivityC" />
-        <activity android:name="com.gdeer.gdtesthub.view.constraintlayout.MotionLayoutActivity" />
+        <activity android:name=".view.constraintlayout.MotionLayoutActivity" />
         <activity
             android:name=".startflag.ActivityB"
             android:exported="true"
@@ -63,13 +71,13 @@
         <activity android:name=".pluginfy.androidclass.StubActivity" />
         <activity android:name=".view.listview.ChangeConsumerActivity" />
         <activity android:name=".pluginfy.commonclass.CommonClassActivity" />
-        <activity android:name="com.gdeer.gdtesthub.poplibrary.glide.LoadActivity" />
+        <activity android:name=".poplibrary.glide.LoadActivity" />
         <activity android:name=".systrace.TraceActivity" />
         <activity android:name=".notification.NotiEnableActivity" />
         <activity android:name=".context.StartTestActivity" />
         <activity android:name=".bitmap.FilterActivity" />
         <activity android:name=".bitmap.BitmapCompressActivity" />
-        <activity android:name="com.gdeer.gdtesthub.poplibrary.glide.BitmapActivity" />
+        <activity android:name=".poplibrary.glide.BitmapActivity" />
         <activity android:name=".drawable.DrawableActivity" />
         <activity
             android:name=".dot9.Dot9Activity"
@@ -85,21 +93,15 @@
         <activity
             android:name=".jump.JumpActivity"
             android:launchMode="singleTask" />
-        <activity android:name="com.gdeer.gdtesthub.view.constraintlayout.ConstraintActivity" />
+        <activity android:name=".view.constraintlayout.ConstraintActivity" />
         <activity android:name=".view.decorview.DecorActivity" />
-        <activity android:name="com.gdeer.gdtesthub.view.viewfliper.ViewFlipperActivity" />
+        <activity android:name=".view.viewfliper.ViewFlipperActivity" />
         <activity android:name=".simplelist.MyListActivity" />
         <activity android:name=".simplelist.MyLauncherActivity" />
         <activity
             android:name=".launchtime.LaunchTimeActivity"
             android:exported="true" />
         <activity android:name=".viewmodel.VmActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".view.textview.TextActivity" />
         <activity
