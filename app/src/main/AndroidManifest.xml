@@ -16,13 +16,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.recyclerview.RcvActivity">
+        <activity android:name=".view.textview.FontActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".view.recyclerview.RcvActivity">
         </activity>
         <activity android:name=".push.PushActivity" />
         <activity android:name=".traversal.RequestLayoutActivity" />
@@ -101,8 +103,7 @@
         <activity
             android:name=".launchtime.LaunchTimeActivity"
             android:exported="true" />
-        <activity android:name=".viewmodel.VmActivity">
-        </activity>
+        <activity android:name=".viewmodel.VmActivity"></activity>
         <activity android:name=".view.textview.TextActivity" />
         <activity
             android:name=".handler.HandlerActivity"
@@ -140,9 +141,7 @@
         <service
             android:name=".anr.MyService"
             android:enabled="true"
-            android:exported="true" />
-
-        <!-- Since JCore2.0.0 Required SDK核心功能 -->
+            android:exported="true" /> <!-- Since JCore2.0.0 Required SDK核心功能 -->
         <!-- 可配置android:process参数将Service放在其他进程中；android:enabled属性不能是false -->
         <!-- 这个是自定义Service，要继承极光JCommonService，可以在更多手机平台上使得推送通道保持的更稳定 -->
         <service
