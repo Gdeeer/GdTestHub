@@ -19,7 +19,7 @@ buildscript {
         // in the individual module build.gradle files
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
-        classpath("com.geektime.systrace:systrace-gradle-plugin:1.0") { changing = true }
+        // classpath("com.geektime.systrace:systrace-gradle-plugin:1.0") { changing = true }
     }
 }
 

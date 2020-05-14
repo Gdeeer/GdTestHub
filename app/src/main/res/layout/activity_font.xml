@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".view.textview.FontActivity">
@@ -15,5 +16,88 @@
     <TextView
         android:id="@+id/tv_font_2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="鹿露abc123哈哈한국어d'Oïlいっぱい-hel-regular"/>
+
+    <TextView
+        android:id="@+id/tv_font_21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="鹿露abc123哈哈한국어d'Oïlいっぱい-hel-bold"/>
+
+    <TextView
+        android:id="@+id/tv_font_22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="鹿露abc123哈哈한국어d'Oïlいっぱい-hel-medium"/>
+
+    <TextView
+        android:id="@+id/tv_font_31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="鹿露abc123哈哈한국어d'Oïlいっぱい-hel-regular"/>
+
+    <TextView
+        android:id="@+id/tv_font_32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="鹿露abc123哈哈한국어d'Oïlいっぱい-hel-bold"/>
+
+    <TextView
+        android:id="@+id/tv_font_33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="鹿露abc123哈哈한국어d'Oïlいっぱい-hel-medium"/>
+
+    <TextView
+        android:id="@+id/tv_font_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-thin"
+        android:text="鹿露abc123哈哈한국어d'Oïlいっぱい-thin" />
+
+    <TextView
+        android:id="@+id/tv_font_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="鹿露abc123哈哈한국어d'Oïlいっぱい-light" />
+
+    <TextView
+        android:id="@+id/tv_font_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="鹿露abc123哈哈한국어d'Oïlいっぱい-regular" />
+
+    <TextView
+        android:id="@+id/tv_font_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="鹿露abc123哈哈한국어d'Oïlいっぱい-medium" />
+
+    <TextView
+        android:id="@+id/tv_font_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="鹿露abc123哈哈한국어d'Oïlいっぱい-bold"
+        android:textStyle="bold" />
+
+    <com.gdeer.gdtesthub.view.textview.font.FontEditText
+        android:id="@+id/tv_phone"
+        style="@style/AddressInputStyle"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="phone"
+        android:contentDescription="请填写手机号码"
+        android:drawablePadding="10dp"
+        android:hint="手机号码"
+        android:inputType="phone"
+        app:hintTextSize="16dp" />
 </LinearLayout>

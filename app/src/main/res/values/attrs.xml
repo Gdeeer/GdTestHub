@@ -3,4 +3,70 @@
     <declare-styleable name="PrefixTextView">
         <attr name="prefix" format="string" />
     </declare-styleable>
+
+    <attr name="textStyle">
+        <flag name="normal" value="0" />
+        <flag name="bold" value="1" />
+        <flag name="italic" value="2" />
+    </attr>
+
+    <attr name="hintTextStyle">
+        <flag name="normal" value="0" />
+        <flag name="bold" value="1" />
+        <flag name="italic" value="2" />
+    </attr>
+
+    <attr name="languageStyle">
+        <flag name="customer" value="0" />
+        <flag name="enStyle" value="1" />
+        <flag name="chStyle" value="2" />
+    </attr>
+
+    <attr name="duTextSize">
+        <flag name="default_34" value="1" />
+        <flag name="default_26" value="2" />
+        <flag name="default_24" value="3" />
+        <flag name="default_22" value="4" />
+        <flag name="default_20" value="5" />
+        <flag name="default_18" value="6" />
+        <flag name="default_16" value="7" />
+        <flag name="default_14" value="8" />
+        <flag name="default_12" value="9" />
+        <flag name="default_10" value="10" />
+        <flag name="default_9" value="11" />
+        <flag name="default_8" value="12" />
+
+        <flag name="din_24" value="101" />
+        <flag name="din_16" value="102" />
+        <flag name="din_14" value="103" />
+
+        <flag name="helvetica_44" value="201" />
+        <flag name="helvetica_20" value="202" />
+    </attr>
+
+    <attr name="typeface" format="string" />
+    <attr name="hintTypeface" format="string" />
+    <attr name="hintTextSize" format="dimension" />
+    <attr name="textSize" format="dimension" />
+    <declare-styleable name="FontText">
+        <attr name="typeface" />
+        <attr name="textSize" />
+        <attr name="hintTypeface" />
+        <attr name="hintTextSize" />
+        <attr name="textStyle" />
+        <attr name="hintTextStyle" />
+        <attr name="languageStyle" />
+        <attr name="duTextSize" />
+    </declare-styleable>
+
+    <declare-styleable name="FontEditText">
+        <attr name="typeface" />
+        <attr name="textSize" />
+        <attr name="hintTypeface" />
+        <attr name="hintTextSize" />
+        <attr name="textStyle" />
+        <attr name="hintTextStyle" />
+        <attr name="languageStyle" />
+        <attr name="duTextSize" />
+    </declare-styleable>
 </resources>
