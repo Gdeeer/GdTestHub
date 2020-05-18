@@ -6,4 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="hello_str">hello host</string>
     <string name="title_activity_tab">TabActivity</string>
+
+    <string name="server_client_id">244708599475-9jqf2re62topph56skoabspuid99k7j2.apps.googleusercontent.com</string>
 </resources>

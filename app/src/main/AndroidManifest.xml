@@ -16,11 +16,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".login.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <provider
             android:name=".MySliceProvider"
             android:authorities="com.gdeer.gdtesthub"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -34,19 +42,11 @@
         </provider>
 
         <activity android:name=".view.textview.FontActivity">
-
             <meta-data
                 android:name="android.metadata.SLICE_URI"
-                android:value="content://com.gdeer.gdtesthub/font"/>
-
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+                android:value="content://com.gdeer.gdtesthub/font" />
         </activity>
-        <activity android:name=".view.recyclerview.RcvActivity"></activity>
+        <activity android:name=".view.recyclerview.RcvActivity" />
         <activity android:name=".push.PushActivity" />
         <activity android:name=".traversal.RequestLayoutActivity" />
         <activity android:name=".animation.LayoutTransitionActivity" />
