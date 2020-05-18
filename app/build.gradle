@@ -29,6 +29,8 @@ android {
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+        vectorDrawables.useSupportLibrary = true
+
         ndk {
             // 选择要添加的对应 cpu 类型的 .so 库。
             abiFilters 'armeabi'
@@ -45,7 +47,7 @@ android {
         abi {
             enable true
             reset()
-            include 'x86', 'armeabi-v7a','x86_64'
+            include 'x86', 'armeabi-v7a', 'x86_64'
             universalApk true
         }
     }
@@ -91,6 +93,8 @@ configurations.all {
 dependencies {
     // 使用自定义 configuration: gdConfiguration
     // mylib 中的类可以在 app 中正常访问
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.slice:slice-builders:1.0.0'
     gdConfiguration project(":mylib")
 
     // 使用自定义 configuration: gdConfiguration

@@ -16,7 +16,29 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <provider
+            android:name=".MySliceProvider"
+            android:authorities="com.gdeer.gdtesthub"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.app.slice.category.SLICE" />
+
+                <data
+                    android:host="gdeer.com"
+                    android:pathPrefix="/"
+                    android:scheme="http" />
+            </intent-filter>
+        </provider>
+
         <activity android:name=".view.textview.FontActivity">
+
+            <meta-data
+                android:name="android.metadata.SLICE_URI"
+                android:value="content://com.gdeer.gdtesthub/font"/>
+
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
@@ -24,8 +46,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.recyclerview.RcvActivity">
-        </activity>
+        <activity android:name=".view.recyclerview.RcvActivity"></activity>
         <activity android:name=".push.PushActivity" />
         <activity android:name=".traversal.RequestLayoutActivity" />
         <activity android:name=".animation.LayoutTransitionActivity" />
@@ -103,7 +124,7 @@
         <activity
             android:name=".launchtime.LaunchTimeActivity"
             android:exported="true" />
-        <activity android:name=".viewmodel.VmActivity"></activity>
+        <activity android:name=".viewmodel.VmActivity" />
         <activity android:name=".view.textview.TextActivity" />
         <activity
             android:name=".handler.HandlerActivity"

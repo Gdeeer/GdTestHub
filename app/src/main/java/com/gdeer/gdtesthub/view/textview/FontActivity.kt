@@ -1,9 +1,10 @@
 package com.gdeer.gdtesthub.view.textview
 
 import android.graphics.Typeface
+import android.net.Uri
 import android.os.Bundle
-import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import androidx.slice.SliceManager
 import com.gdeer.gdtesthub.R
 import kotlinx.android.synthetic.main.activity_font.*
 
@@ -13,6 +14,10 @@ class FontActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_font)
 
+        val manager = SliceManager.getInstance(this)
+        val mainUri = Uri.parse("content://com.gdeer.gdtesthub/font")
+        manager.grantSlicePermission("com.google.android.googlequicksearchbox", mainUri)
+        manager.grantSlicePermission("com.google.android.gms", mainUri)
 
         val s = "hello我是123"
         tv_font_1.text = s
