@@ -189,7 +189,7 @@ dependencies {
     implementation 'cn.jiguang.sdk:jcore:2.3.4'  // 此处以JCore 2.3.4 版本为例。
 
     // Dependency for Google Sign-In
-    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.google.android.gms:play-services-auth:18.0.0'
 }
 
 task preCompileJasper {

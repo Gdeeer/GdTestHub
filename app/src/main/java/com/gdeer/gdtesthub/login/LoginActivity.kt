@@ -3,12 +3,13 @@ package com.gdeer.gdtesthub.login
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.gdeer.gdtesthub.R
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.auth.api.signin.GoogleSignInStatusCodes
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import kotlinx.android.synthetic.main.activity_login.*
@@ -16,44 +17,50 @@ import kotlinx.android.synthetic.main.activity_login.*
 class LoginActivity : AppCompatActivity() {
 
     companion object {
-        val RC_SIGN_IN = 9001
+        private const val RC_SIGN_IN = 9001
     }
-
-    private var mGoogleSignInClient: GoogleSignInClient? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        // [START configure_signin]
-        // Configure sign-in to request the user's ID, email address, and basic
-        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-
-        // [START configure_signin]
-        // Configure sign-in to request the user's ID, email address, and basic
-        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build()
-        // [END configure_signin]
-
-        // [START build_client]
-        // Build a GoogleSignInClient with the options specified by gso.
-        // [END configure_signin]
-
-        // [START build_client]
-        // Build a GoogleSignInClient with the options specified by gso.
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
-
         tv_login_google.setOnClickListener {
             signIn()
         }
+
+        tv_logout_google.setOnClickListener {
+            signOut()
+        }
     }
 
-    // [END handleSignInResult]
     private fun signIn() {
-        val signInIntent = mGoogleSignInClient!!.signInIntent
+        // [configure_signin]
+        // Configure sign-in to request the user's ID, email address, and basic
+        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.server_client_id))
+                .requestEmail()
+                .build()
+
+        // [build_client]
+        // Build a GoogleSignInClient with the options specified by gso.
+        val googleSignInClient = GoogleSignIn.getClient(this, gso)
+
+        val signInIntent = googleSignInClient!!.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
+    }
+
+    private fun signOut() {
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.server_client_id))
+                .requestEmail()
+                .build()
+        // 可以与 signIn 用同一个 googleSignInClient，也可以不同
+        val googleSignInClient = GoogleSignIn.getClient(this, gso)
+        googleSignInClient!!.signOut()
+                .addOnCompleteListener(this) {
+                    Toast.makeText(this, "sign out", Toast.LENGTH_SHORT).show()
+                }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -67,21 +74,21 @@ class LoginActivity : AppCompatActivity() {
             handleSignInResult(task)
         }
     }
-    // [END onActivityResult]
 
-    // [END onActivityResult]
-    // [START handleSignInResult]
     private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
         try {
             val account = completedTask.getResult(ApiException::class.java)
-            Log.w("zhangjl", "success " + account)
+            Log.w("zhangjl", "success " + account?.zac())
+            Toast.makeText(this, "success", Toast.LENGTH_SHORT).show()
             // Signed in successfully, show authenticated UI.
-//            updateUI(account)
+            // updateUI(account)
         } catch (e: ApiException) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            Log.w("zhangjl", "signInResult:failed code=" + e.statusCode)
-//            updateUI(null)
+            // updateUI(null)
+            val errorMsg = e.statusCode.toString() + " " + GoogleSignInStatusCodes.getStatusCodeString(e.statusCode)
+            Log.w("zhangjl", "signInResult:failed code=$errorMsg")
+            Toast.makeText(this, "fail: $errorMsg", Toast.LENGTH_SHORT).show()
         }
     }
 }
