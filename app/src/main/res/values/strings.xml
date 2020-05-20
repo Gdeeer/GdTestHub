@@ -9,4 +9,9 @@
 
     <!-- 用于向 google 请求 idToken（获取后用于与自己服务端交互） -->
     <string name="server_client_id">244708599475-9jqf2re62topph56skoabspuid99k7j2.apps.googleusercontent.com</string>
+
+    <!-- facebook 登录 -->
+    <string name="facebook_app_id">546473546012331</string>
+    <!-- 5.15 及以后用不到了 -->
+    <string name="fb_login_protocol_scheme">fb546473546012331</string>
 </resources>

@@ -190,6 +190,8 @@ dependencies {
 
     // Dependency for Google Sign-In
     implementation 'com.google.android.gms:play-services-auth:18.0.0'
+    // facebook login
+    implementation 'com.facebook.android:facebook-login:5.15.3'
 }
 
 task preCompileJasper {
