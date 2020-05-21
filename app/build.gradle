@@ -119,6 +119,9 @@ configurations.all {
 }
 
 dependencies {
+    implementation project(":myandroidlib")
+    implementation project(":myandroidlib2")
+
     // 使用自定义 configuration: gdConfiguration
     // mylib 中的类可以在 app 中正常访问
     implementation 'androidx.annotation:annotation:1.1.0'
