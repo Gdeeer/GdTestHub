@@ -18,12 +18,6 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".other.ResTestActivity" />
         <activity android:name=".login.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <!-- facebook 登录 start -->
@@ -56,7 +50,14 @@
         <activity android:name=".view.recyclerview.RcvActivity" />
         <activity android:name=".push.PushActivity" />
         <activity android:name=".traversal.RequestLayoutActivity" />
-        <activity android:name=".animation.LayoutTransitionActivity" />
+        <activity android:name=".animation.LayoutTransitionActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".view.textureview.LiveCameraActivity" />
         <activity
             android:name=".touchevent.deliver.TouchDeliverActivity"
