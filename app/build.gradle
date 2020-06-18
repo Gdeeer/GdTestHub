@@ -195,6 +195,9 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:18.0.0'
     // facebook login
     implementation 'com.facebook.android:facebook-login:5.15.3'
+
+    // 手机号合法性判断
+    implementation 'com.googlecode.libphonenumber:libphonenumber:8.2.0'
 }
 
 task preCompileJasper {

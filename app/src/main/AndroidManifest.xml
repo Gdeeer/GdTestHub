@@ -16,16 +16,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".other.ResTestActivity" />
-        <activity android:name=".login.LoginActivity">
-        </activity>
+        <activity android:name=".logcat.LogcatActivity">
 
-        <!-- facebook 登录 start -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".other.ResTestActivity" />
+        <activity android:name=".login.LoginActivity"></activity> <!-- facebook 登录 start -->
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
-        <!-- facebook 登录 end -->
-
+            android:value="@string/facebook_app_id" /> <!-- facebook 登录 end -->
         <provider
             android:name=".MySliceProvider"
             android:authorities="com.gdeer.gdtesthub"
@@ -50,14 +54,7 @@
         <activity android:name=".view.recyclerview.RcvActivity" />
         <activity android:name=".push.PushActivity" />
         <activity android:name=".traversal.RequestLayoutActivity" />
-        <activity android:name=".animation.LayoutTransitionActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".animation.LayoutTransitionActivity"></activity>
         <activity android:name=".view.textureview.LiveCameraActivity" />
         <activity
             android:name=".touchevent.deliver.TouchDeliverActivity"
@@ -75,7 +72,8 @@
             android:label="@string/title_activity_tab" />
         <activity android:name=".poplibrary.okhttp.OkHttpActivity" />
         <activity android:name=".touchevent.multitouch.MulTouchActivity" />
-        <activity android:name=".touchevent.cancel.TouchEventActivity" />
+        <activity android:name=".touchevent.cancel.TouchEventActivity">
+        </activity>
         <activity android:name=".memory.leak.LeakActivity" />
         <activity android:name=".bitmap.ChangeColorActivity" />
         <activity android:name=".view.webview.WebViewActivity" />
