@@ -76,17 +76,10 @@
             android:label="@string/title_activity_tab" />
         <activity android:name=".poplibrary.okhttp.OkHttpActivity" />
         <activity android:name=".touchevent.multitouch.MulTouchActivity" />
-        <activity android:name=".touchevent.cancel.TouchEventActivity"></activity>
+        <activity android:name=".touchevent.cancel.TouchEventActivity" />
         <activity android:name=".memory.leak.LeakActivity" />
         <activity android:name=".bitmap.ChangeColorActivity" />
-        <activity android:name=".view.webview.WebViewActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".view.webview.WebViewActivity" />
         <activity android:name=".animation.ChangeHeightActivity" />
         <activity android:name=".animation.RotationActivity" />
         <activity android:name=".view.imageview.ImgActivity" />
@@ -141,7 +134,14 @@
             android:name=".launchtime.LaunchTimeActivity"
             android:exported="true" />
         <activity android:name=".viewmodel.VmActivity" />
-        <activity android:name=".view.textview.TextActivity" />
+        <activity android:name=".view.textview.TextActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".handler.HandlerActivity"
             android:label="@string/title_activity_handler"
