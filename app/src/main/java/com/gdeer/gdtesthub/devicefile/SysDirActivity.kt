@@ -27,7 +27,7 @@ class SysDirActivity : ListActivity() {
         val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, data)
         listAdapter = arrayAdapter
 
-        val f = File(externalCacheDir.absolutePath + "/a.txt")
+        val f = File(externalCacheDir?.absolutePath + "/a.txt")
         f.createNewFile()
         Log.d("zhangjl", f.absolutePath + " " + f.exists())
         showAvailableSize()

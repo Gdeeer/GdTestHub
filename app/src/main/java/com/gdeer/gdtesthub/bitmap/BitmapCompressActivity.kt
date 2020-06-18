@@ -115,11 +115,13 @@ class BitmapCompressActivity : AppCompatActivity() {
         log(bmScaled)
     }
 
-    fun log(bm: Bitmap, prefix: String = "压缩后") {
-        Log.i("zhangjl", "${prefix}图片大小 ${bm.byteCount / 1024}K " +
-                "宽度:${bm.width} " +
-                "高度:${bm.height} "
-        )
+    fun log(bm: Bitmap?, prefix: String = "压缩后") {
+        bm?.apply {
+            Log.i("zhangjl", "${prefix}图片大小 ${bm.byteCount / 1024}K " +
+                    "宽度:${bm.width} " +
+                    "高度:${bm.height} "
+            )
+        }
     }
 
     private fun bitmapToByteArray(bm: Bitmap): ByteArray? {
