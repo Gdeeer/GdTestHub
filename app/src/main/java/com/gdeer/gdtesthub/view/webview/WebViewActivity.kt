@@ -16,11 +16,10 @@ class WebViewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_webview)
 
 
-        webview.loadUrl("https://www.baidu.com/")
+        // webview.loadUrl("https://www.baidu.com/")
 
-        webview.setOnScrollChangeListener { l, t, oldl, oldt ->
-
-        }
+        // 加载本地 html
+        webview.loadUrl("file:///android_asset/deeplink.html")
 
         btn_check_scroll.setOnClickListener {
             Log.d("zhangjl", "!webview.canScrollVertically(-1): " + !webview.canScrollVertically(-1))

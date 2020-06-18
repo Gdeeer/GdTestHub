@@ -10,7 +10,9 @@
         android:id="@+id/btn_check_scroll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="check scroll"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.gdeer.gdtesthub.view.webview.ScrollWebView
