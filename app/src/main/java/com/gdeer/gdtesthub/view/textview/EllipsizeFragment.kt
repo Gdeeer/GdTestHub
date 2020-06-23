@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.fragment_ellipsize.*
 /**
  * Ellipsize 测试的 Fragment
  */
-class EllipsizeFragment : Fragment() {
+class EllipsizeFragment private constructor() : Fragment() {
     companion object {
         @JvmStatic
         fun newInstance(): EllipsizeFragment {
