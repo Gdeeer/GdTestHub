@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.gdeer.gdtesthub.R;
+import com.gdeer.gdtesthub.view.textview.baseuse.BaseUseFragment;
 
 public class TextActivity extends AppCompatActivity {
 
@@ -14,7 +15,7 @@ public class TextActivity extends AppCompatActivity {
         setContentView(R.layout.text_activity);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, EllipsizeFragment.newInstance())
+                    .replace(R.id.container, BaseUseFragment.newInstance())
                     .commitNow();
         }
     }
