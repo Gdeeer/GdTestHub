@@ -4,5 +4,10 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
+    <!-- %30 的透明度 -->
+    <color name="colorPrimaryAlpha30">#B3008577</color>
+    <color name="colorPrimaryDarkAlpha30">#B300574B</color>
+    <color name="colorAccentAlpha30">#B3D81B60</color>
+
     <color name="w15_blue">#3097fe</color>
 </resources>

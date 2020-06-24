@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_porter"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".bitmap.PorterDuffActivity">
+
+    <ImageView
+        android:background="@color/colorPrimary"
+        android:id="@+id/tv_1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="1" />
+
+    <ImageView
+        android:background="@color/colorPrimary"
+        android:id="@+id/tv_2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="2" />
+
+    <ImageView
+        android:background="@color/colorPrimary"
+        android:id="@+id/tv_3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="3" />
+
+    <ImageView
+        android:background="@color/colorPrimary"
+        android:id="@+id/tv_4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="4" />
+
+    <ImageView
+        android:background="@color/colorPrimary"
+        android:id="@+id/tv_5"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="5" />
+
+
+    <ImageView
+        android:background="@color/colorPrimary"
+        android:id="@+id/tv_11"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="11" />
+
+    <ImageView
+        android:background="@color/colorPrimary"
+        android:id="@+id/tv_12"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="12" />
+
+    <ImageView
+        android:background="@color/colorPrimary"
+        android:id="@+id/tv_13"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="13" />
+
+    <ImageView
+        android:background="@color/colorPrimary"
+        android:id="@+id/tv_14"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="14" />
+
+    <ImageView
+        android:background="@color/colorPrimary"
+        android:id="@+id/tv_15"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="15" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_porter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flow_wrapMode="chain"
+        app:constraint_referenced_ids="tv_1,tv_2,tv_3,tv_4,tv_5,tv_11,tv_12,tv_13,tv_14,tv_15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,7 +15,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/girl" />
+        app:srcCompat="@drawable/earth_png32" />
 
     <com.gdeer.gdtesthub.view.textview.PrefixTextView
         android:id="@+id/tv_origin"
