@@ -12,7 +12,7 @@ import com.gdeer.gdtesthub.R
 import com.gdeer.gdtesthub.fragment.ui.fragmentSecond.SecondFragment
 import kotlinx.android.synthetic.main.fragment_life_fragment.*
 
-class FirstFragment : androidx.fragment.app.Fragment() {
+class FirstFragment : Fragment() {
 
     companion object {
         fun newInstance() = FirstFragment()
@@ -44,7 +44,7 @@ class FirstFragment : androidx.fragment.app.Fragment() {
 
         btn_start.setOnClickListener {
             activity?.supportFragmentManager?.beginTransaction()
-                    ?.replace(R.id.container, SecondFragment.newInstance())
+                    ?.replace(R.id.fragmentlife, SecondFragment.newInstance())
                     ?.commitNow()
         }
     }
@@ -72,6 +72,11 @@ class FirstFragment : androidx.fragment.app.Fragment() {
     override fun onDestroyView() {
         Log.d("zhangjl", "first onDestroyView")
         super.onDestroyView()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        Log.d("zhangjl", "first onSaveInstanceState")
+        super.onSaveInstanceState(outState)
     }
 
     override fun onDestroy() {
