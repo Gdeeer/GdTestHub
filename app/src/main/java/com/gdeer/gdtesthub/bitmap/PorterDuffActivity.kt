@@ -20,6 +20,10 @@ class PorterDuffActivity : AppCompatActivity() {
         get() = resources.getDrawable(R.drawable.shape_porter_oval).toBitmap()!!
     private val rectBitmap
         get() = resources.getDrawable(R.drawable.shape_porter_rect).toBitmap()!!
+    private val ovalBitmapWithAlpha
+        get() = resources.getDrawable(R.drawable.shape_porter_oval_with_alpha).toBitmap()!!
+    private val rectBitmapWithAlpha
+        get() = resources.getDrawable(R.drawable.shape_porter_rect_with_alpha).toBitmap()!!
 
     private lateinit var dstBitmap: Bitmap
     private lateinit var srcBitmap: Bitmap
@@ -34,6 +38,16 @@ class PorterDuffActivity : AppCompatActivity() {
         showAllMode()
         btn_change.setOnClickListener {
             swap()
+        }
+
+        rg_alpha.setOnCheckedChangeListener { _, checkedId ->
+            if (checkedId == R.id.rb_with_alpha) {
+                dstBitmap = ovalBitmapWithAlpha
+                srcBitmap = rectBitmapWithAlpha
+            } else {
+                dstBitmap = ovalBitmap
+                srcBitmap = rectBitmap
+            }
         }
     }
 

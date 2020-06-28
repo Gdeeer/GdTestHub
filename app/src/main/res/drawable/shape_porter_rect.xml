@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
-    <size
-        android:width="40dp"
-        android:height="40dp" />
-    <solid android:color="@color/colorPrimaryAlpha30" />
-</shape>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:bottom="40dp"
+        android:drawable="@drawable/shape_porter_rect_origin"
+        android:right="40dp" />
+</layer-list>
