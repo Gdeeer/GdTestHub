@@ -1,5 +1,6 @@
 package com.gdeer.gdtesthub.view.textview
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -13,6 +14,8 @@ import kotlinx.android.synthetic.main.fragment_ellipsize.*
 
 /**
  * Ellipsize 测试的 Fragment
+ *
+ * 添加 private constructor() 后，Activity 被杀死后恢复无法重建 Fragment
  */
 class EllipsizeFragment private constructor() : Fragment() {
     companion object {
@@ -26,6 +29,7 @@ class EllipsizeFragment private constructor() : Fragment() {
         return inflater.inflate(R.layout.fragment_ellipsize, container, false)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
