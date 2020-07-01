@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- imeOptions 的效果与输入法实现有关
+        各种输入法的小米版，actionDone 都无效（其他action有效）
+        讯飞输入法、三星输入法，actionDone 有效
+     -->
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_text"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:hint="action"
+        android:imeActionLabel="完成"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

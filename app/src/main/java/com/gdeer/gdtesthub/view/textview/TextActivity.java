@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import com.gdeer.gdtesthub.R;
 import com.gdeer.gdtesthub.view.textview.baseuse.BaseUseFragment;
+import com.gdeer.gdtesthub.view.textview.edit.EditFragment;
 
 public class TextActivity extends AppCompatActivity {
 
@@ -15,7 +16,7 @@ public class TextActivity extends AppCompatActivity {
         setContentView(R.layout.text_activity);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, BaseUseFragment.newInstance())
+                    .replace(R.id.container, EditFragment.newInstance())
                     .commitNow();
         }
     }
