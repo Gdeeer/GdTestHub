@@ -2,8 +2,9 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.butterknife'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply from: 'configTest.gradle'
-apply from: 'incrementalTest.gradle'
+apply from: '../gradleScript/configTest.gradle'
+apply from: '../gradleScript/incrementalTest.gradle'
+apply from: '../gradleScript/someTest.gradle'
 apply plugin: LifecyclePlugin
 
 ext {

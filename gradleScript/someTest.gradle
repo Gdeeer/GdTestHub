@@ -1,0 +1,6 @@
+/**
+ * 判断是否是 debug buildType
+ */
+boolean isDebugBuildType() {
+    return gradle.startParameter.taskNames.toString().toLowerCase().contains("debug")
+}
