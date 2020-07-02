@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".bitmap.PorterDuffActivity"></activity>
+        <activity android:name=".view.ViewCommonActivity"></activity>
+        <activity android:name=".bitmap.PorterDuffActivity" />
         <activity android:name=".deeplink.DeeplinkActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -91,7 +92,6 @@
             android:label="ActivityC"
             android:taskAffinity=".ActivityC" />
         <activity android:name=".view.constraintlayout.ConsCommonActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
@@ -108,7 +108,7 @@
             android:name=".startflag.ActivityA"
             android:exported="true"
             android:label="ActivityA" />
-        <activity android:name=".pluginfy.androidclass.CommonActivity" />
+        <activity android:name=".pluginfy.androidclass.SimpleActivity" />
         <activity android:name=".pluginfy.androidclass.StubActivity" />
         <activity android:name=".view.listview.ChangeConsumerActivity" />
         <activity android:name=".pluginfy.commonclass.CommonClassActivity" />
@@ -143,8 +143,7 @@
             android:name=".launchtime.LaunchTimeActivity"
             android:exported="true" />
         <activity android:name=".viewmodel.VmActivity" />
-        <activity android:name=".view.textview.TextActivity">
-        </activity>
+        <activity android:name=".view.textview.TextActivity"></activity>
         <activity
             android:name=".handler.HandlerActivity"
             android:label="@string/title_activity_handler"
