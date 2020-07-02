@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.ViewCommonActivity"></activity>
+        <activity android:name=".CommonActivity"></activity>
+        <activity android:name=".view.ViewCommonActivity" />
         <activity android:name=".bitmap.PorterDuffActivity" />
         <activity android:name=".deeplink.DeeplinkActivity">
             <intent-filter>
@@ -143,7 +144,7 @@
             android:name=".launchtime.LaunchTimeActivity"
             android:exported="true" />
         <activity android:name=".viewmodel.VmActivity" />
-        <activity android:name=".view.textview.TextActivity"></activity>
+        <activity android:name=".view.textview.TextActivity" />
         <activity
             android:name=".handler.HandlerActivity"
             android:label="@string/title_activity_handler"
