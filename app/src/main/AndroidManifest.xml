@@ -90,7 +90,15 @@
             android:exported="true"
             android:label="ActivityC"
             android:taskAffinity=".ActivityC" />
-        <activity android:name=".view.constraintlayout.MotionLayoutActivity" />
+        <activity android:name=".view.constraintlayout.ConsCommonActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".startflag.ActivityB"
             android:exported="true"
@@ -136,12 +144,6 @@
             android:exported="true" />
         <activity android:name=".viewmodel.VmActivity" />
         <activity android:name=".view.textview.TextActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".handler.HandlerActivity"
