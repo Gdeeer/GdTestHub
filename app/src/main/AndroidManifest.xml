@@ -16,8 +16,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CommonActivity"></activity>
-        <activity android:name=".view.ViewCommonActivity" />
+        <activity android:name=".CommonActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".bitmap.PorterDuffActivity" />
         <activity android:name=".deeplink.DeeplinkActivity">
             <intent-filter>
@@ -93,12 +99,6 @@
             android:label="ActivityC"
             android:taskAffinity=".ActivityC" />
         <activity android:name=".view.constraintlayout.ConsCommonActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".startflag.ActivityB"
