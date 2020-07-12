@@ -73,7 +73,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
             zipAlignEnabled true
@@ -175,6 +175,8 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines"
     // kotlin 协程 android 平台库
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines"
+    // kotlin 反射库，解决 fastjson 解析失败问题（default constructor not found）
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
     implementation 'com.github.bumptech.glide:glide:4.9.0'
 
@@ -199,6 +201,9 @@ dependencies {
 
     // 手机号合法性判断
     implementation 'com.googlecode.libphonenumber:libphonenumber:8.2.0'
+
+    // fastjson
+    implementation 'com.alibaba:fastjson:1.2.70'
 }
 
 task preCompileJasper {

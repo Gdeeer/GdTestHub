@@ -1,8 +1,8 @@
 package com.gdeer.gdtesthub
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.gdeer.gdtesthub.restart.RestartFragment
+import androidx.appcompat.app.AppCompatActivity
+import com.gdeer.gdtesthub.lib.fastjson.FastJsonFragment
 
 class CommonActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -10,7 +10,7 @@ class CommonActivity : AppCompatActivity() {
         setContentView(R.layout.activity_common)
 
         if (savedInstanceState == null) {
-            val fragment = RestartFragment.newInstance()
+            val fragment = FastJsonFragment.newInstance()
             supportFragmentManager.beginTransaction()
                     .replace(R.id.root_common, fragment)
                     .commitNow()
