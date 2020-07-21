@@ -12,13 +12,41 @@
         android:id="@+id/et_text"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:layout_marginTop="10dp"
         android:hint="action"
         android:imeActionLabel="完成"
         android:imeOptions="actionDone"
-        android:inputType="number"
+        android:inputType="text"
         android:singleLine="true"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_prefix"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="输入prefix"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_text" />
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="clear"
+        app:layout_constraintBottom_toBottomOf="@id/et_prefix"
+        app:layout_constraintStart_toEndOf="@id/et_prefix"
+        app:layout_constraintTop_toTopOf="@id/et_prefix" />
+
+    <Button
+        android:id="@+id/btn_change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="change"
+        app:layout_constraintBottom_toBottomOf="@id/et_prefix"
+        app:layout_constraintEnd_toStartOf="@id/et_prefix"
+        app:layout_constraintTop_toTopOf="@id/et_prefix" />
 </androidx.constraintlayout.widget.ConstraintLayout>
