@@ -22,8 +22,42 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
+        // 默认生成
+        debug {
+            debuggable true
+        }
     }
 
+    flavorDimensions "country", "api"
+    productFlavors {
+        hk {
+            dimension "country"
+        }
+
+//        // 当子 module 的 dimension、flavor 比父 module 多时，可能会编译失败
+//        jp {
+//            dimension "country"
+//        }
+
+        api20 {
+            dimension "api"
+        }
+//        // 当子 module 的 dimension、flavor 比父 module 多时，可能会编译失败
+//        api21 {
+//            dimension "api"
+//        }
+    }
+
+    // 过滤包含 api21 Flavor 和 jp Flavor 的变体
+    variantFilter { variant ->
+        def names = variant.flavors*.name
+        // To check for a certain build type, use variant.buildType.name == "<buildType>"
+        if (names.contains("api21") && names.contains("jp")) {
+            // Gradle ignores any variants that satisfy the conditions above.
+            setIgnore(true)
+        }
+    }
 }
 
 dependencies {
