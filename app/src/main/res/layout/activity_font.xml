@@ -37,21 +37,21 @@
         android:id="@+id/tv_font_31"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="鹿露abc123哈哈한국어d'Oïlいっぱい-hel-regular"/>
+        android:text="鹿露abc123哈哈한국어d'Oïlいっぱい-din-regular"/>
 
     <TextView
         android:id="@+id/tv_font_32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:text="鹿露abc123哈哈한국어d'Oïlいっぱい-hel-bold"/>
+        android:text="鹿露abc123哈哈한국어d'Oïlいっぱい-din-bold"/>
 
     <TextView
         android:id="@+id/tv_font_33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
-        android:text="鹿露abc123哈哈한국어d'Oïlいっぱい-hel-medium"/>
+        android:text="鹿露abc123哈哈한국어d'Oïlいっぱい-din-medium"/>
 
     <TextView
         android:id="@+id/tv_font_3"
