@@ -17,12 +17,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".CommonActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".bitmap.PorterDuffActivity" />
         <activity android:name=".deeplink.DeeplinkActivity">
@@ -127,7 +121,14 @@
         <activity android:name=".devicefile.SysDirActivity" />
         <activity android:name=".devicefile.DeviceFileActivity" />
         <activity android:name=".viewtobitmap.ViewToBitmapActivity" />
-        <activity android:name=".fragment.FragmentLifeActivity" />
+        <activity android:name=".fragment.FragmentLifeActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".jump.TargetActivity"
             android:taskAffinity=".gdeer.target"
