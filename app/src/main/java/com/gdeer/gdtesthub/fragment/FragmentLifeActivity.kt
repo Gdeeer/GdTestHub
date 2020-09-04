@@ -10,6 +10,9 @@ import com.gdeer.gdtesthub.fragment.ui.fragmentFirst.FirstFragment
 class FragmentLifeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // 禁止 fragment 恢复
+        // savedInstanceState?.remove("android:support:fragments")
+
         Log.d("zhangjl", "FragmentLifeActivity onCreate beforeSuper $savedInstanceState ${supportFragmentManager.fragments.size} " + this.hashCode())
         super.onCreate(savedInstanceState)
         Log.d("zhangjl", "FragmentLifeActivity onCreate afterSuper $savedInstanceState ${supportFragmentManager.fragments.size}")
