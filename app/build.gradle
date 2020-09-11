@@ -2,10 +2,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.butterknife'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 apply from: '../gradleScript/configTest.gradle'
 apply from: '../gradleScript/incrementalTest.gradle'
 apply from: '../gradleScript/someTest.gradle'
 apply plugin: LifecyclePlugin
+apply from: '../gradleScript/include.gradle'
 
 ext {
     myName = "zhangjl"
@@ -32,9 +34,12 @@ android {
 
         vectorDrawables.useSupportLibrary = true
 
+//        ndk {
+//            // 选择要添加的对应 cpu 类型的 .so 库。
+//            abiFilters 'armeabi'
+//        }
         ndk {
-            // 选择要添加的对应 cpu 类型的 .so 库。
-            abiFilters 'armeabi'
+            abiFilters 'armeabi', 'x86'
         }
 
         manifestPlaceholders = [
@@ -44,12 +49,27 @@ android {
         ]
     }
     // 解决 native libraries 不支持cpu的体系结构。允许模拟器调试
-    splits {
+    // 依赖 Dynamic module 时，不能写 splits{}
+//    splits {
+//        abi {
+//            enable true
+//            reset()
+//            include 'x86', 'armeabi-v7a', 'x86_64'
+//            universalApk true
+//        }
+//    }
+
+    // 打 aab 时，splits{} 会被忽略，使用 bundle{} 来配置
+    bundle {
+        language {
+            // 默认是 true
+            enableSplit = true
+        }
+        density {
+            enableSplit = true
+        }
         abi {
-            enable true
-            reset()
-            include 'x86', 'armeabi-v7a', 'x86_64'
-            universalApk true
+            enableSplit = true
         }
     }
     signingConfigs {
@@ -93,6 +113,7 @@ android {
     dataBinding {
         enabled = true
     }
+    dynamicFeatures = [':dynamicfeature']
 }
 
 configurations {
@@ -204,6 +225,12 @@ dependencies {
 
     // fastjson
     implementation 'com.alibaba:fastjson:1.2.70'
+
+    // ARouter
+    implementation 'com.alibaba:arouter-api:1.4.1'
+    kapt 'com.alibaba:arouter-compiler:1.2.2'
+
+    api "com.google.android.play:core:1.8.0"
 }
 
 task preCompileJasper {

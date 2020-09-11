@@ -14,4 +14,6 @@
     <string name="facebook_app_id">546473546012331</string>
     <!-- 5.15 及以后用不到了 -->
     <string name="fb_login_protocol_scheme">fb546473546012331</string>
+    <!-- 在 dynamic module 的 androidManifest 中使用 -->
+    <string name="title_dynamicfeature">DynamicModule</string>
 </resources>
