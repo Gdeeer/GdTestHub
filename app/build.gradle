@@ -231,6 +231,8 @@ dependencies {
     kapt 'com.alibaba:arouter-compiler:1.2.2'
 
     api "com.google.android.play:core:1.8.0"
+
+    lintChecks project(':rule')
 }
 
 task preCompileJasper {
