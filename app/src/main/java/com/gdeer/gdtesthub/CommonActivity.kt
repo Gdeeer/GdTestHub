@@ -37,11 +37,11 @@ class CommonActivity : AppCompatActivity() {
 //        return Resources.Theme()
 //    }
 
-    override fun getTheme(): Resources.Theme {
-        val superTheme = super.getTheme()
-        return (Proxy.newProxyInstance(
-                Thread.currentThread().contextClassLoader,
-                arrayOf<Class<*>>(Resources.Theme::class.java),
-                MockTypeArray(resources, superTheme)) as Resources.Theme)
-    }
+//    override fun getTheme(): Resources.Theme {
+//        val superTheme = super.getTheme()
+//        return (Proxy.newProxyInstance(
+//                Thread.currentThread().contextClassLoader,
+//                arrayOf<Class<*>>(Resources.Theme::class.java),
+//                MockTypeArray(resources, superTheme)) as Resources.Theme)
+//    }
 }

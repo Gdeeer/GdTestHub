@@ -6,6 +6,10 @@
     <string name="action_settings">Settings</string>
     <string name="hello_str">hello host</string>
     <string name="hello_hot">hello</string>
+    <string name="hot_text">hot_text</string>
+    <string name="hot_hint">hot_hint</string>
+    <string name="hot_hello">hot_hello</string>
+    <string name="hot_bye">hot_bye</string>
     <string name="title_activity_tab">TabActivity</string>
 
     <!-- 用于向 google 请求 idToken（获取后用于与自己服务端交互） -->

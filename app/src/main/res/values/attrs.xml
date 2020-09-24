@@ -69,4 +69,9 @@
         <attr name="languageStyle" />
         <attr name="duTextSize" />
     </declare-styleable>
+
+    <declare-styleable name="HotTextView">
+        <attr name="hello" format="string" />
+        <attr name="bye" format="string" />
+    </declare-styleable>
 </resources>
