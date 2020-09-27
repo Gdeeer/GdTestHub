@@ -1,3 +1,4 @@
+include ':check'
 include ':rule'
 include ':dynamicfeature'
 include ':app', ':annotation', ':processor', ':mylib', ':mylib2'
